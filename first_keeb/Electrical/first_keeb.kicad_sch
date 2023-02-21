@@ -485,7 +485,7 @@
     (uuid fe9e9f21-2e7d-4a1f-9cf8-dbb5f94d13c1)
   )
 
-  (text "MCU breakout" (at 13.335 16.51 0)
+  (text "MCU Breakout (RP2040)\n" (at 13.335 16.51 0)
     (effects (font (size 2 2)) (justify left bottom))
     (uuid 0f5e332d-aeaa-4ead-958c-993a39728c19)
   )
