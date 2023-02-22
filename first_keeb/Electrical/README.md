@@ -21,5 +21,11 @@
 - [ ] Add extra switch with winding copper wire  around switch connected to ADC to test viability
 - [ ] Rotary encoders with the internal ADC?
 
-- SPI lines need resistor terminations
+- SPI 
+   - 0Ohm resistor terminations near source of  each line
 - Debounce rotary encoder and buttons
+
+Future:
+- Find a suitable voltage regulator or voltage reference to accomodate powering all the sensors. 
+  ~10mA maximum each * 16 = 160mA total. This might be too much load on 3v3 pin of pico.
+
