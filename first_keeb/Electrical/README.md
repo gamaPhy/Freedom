@@ -20,3 +20,6 @@
 - [ ] Add switch footprints to pcb
 - [ ] Add extra switch with winding copper wire  around switch connected to ADC to test viability
 - [ ] Rotary encoders with the internal ADC?
+
+- SPI lines need resistor terminations
+- Debounce rotary encoder and buttons
