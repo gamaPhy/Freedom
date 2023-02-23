@@ -9,6 +9,8 @@
   - [ ] actuation settings
   - [ ] rgb settings
 - [ ] usb wakeup (any other usb callbacks like mount, suspend, resume, etc?)
+- [ ] tactile buttons
+  - [ ] activate internal pull ups on GPIO pins
 
 ## stretch
 
