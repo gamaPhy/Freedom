@@ -18,12 +18,15 @@ extern "C" {
 #include "ssd1306/ssd1306.h"
 }
 
+// analog keys
 const uint8_t KEY0_GPIO = 26;
 const uint8_t KEY0_ADC = 0;
 const uint8_t KEY1_GPIO = 27;
 const uint8_t KEY1_ADC = 1;
 
+// addressable LEDs
 const uint8_t WS2812B_GPIO = 13;
+
 const uint8_t OLED_SDA_GPIO = 14;
 const uint8_t OLED_SCL_GPIO = 15;
 i2c_inst* oled_i2c = i2c1;
@@ -32,19 +35,12 @@ ssd1306_t oled;
 bool KEY0_value;
 bool KEY1_value;
 
-void put_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t brightness = 255) {
-    r *= brightness / 255;
-    g *= brightness / 255;
-    b *= brightness / 255;
-    pio_sm_put_blocking(pio0, 0, (((uint32_t)(r) << 16) | ((uint32_t)(g) << 8) | (uint32_t)(b)) << 8u);
-}
-
 void init() {
-    stdio_init_all();
-
+    // init TinyUSB for HID reporting
     tusb_init();
     tud_init(BOARD_TUD_RHPORT);
 
+    // init analog keys
     // adc_init();
     // adc_gpio_init(KEY0_GPIO);
     // adc_gpio_init(KEY1_GPIO);
@@ -56,6 +52,7 @@ void init() {
     gpio_pull_down(KEY1_GPIO);
     // TEMP
 
+    // init OLED
     i2c_init(oled_i2c, 400000);
     gpio_set_function(OLED_SDA_GPIO, GPIO_FUNC_I2C);
     gpio_set_function(OLED_SCL_GPIO, GPIO_FUNC_I2C);
@@ -64,6 +61,7 @@ void init() {
     oled.external_vcc = false;
     ssd1306_init(&oled, 128, 64, 0x3C, oled_i2c);
 
+    // init addressable LEDs
     PIO pio = pio0;
     uint offset = pio_add_program(pio, &ws2812_program);
     ws2812_program_init(pio, 0, offset, WS2812B_GPIO, 800000, false);
@@ -80,6 +78,7 @@ void read_input() {
 }
 
 void send_keys() {
+    // skip if HID not ready
     if (!tud_hid_ready()) {
         return;
     }
@@ -103,7 +102,15 @@ void handle_display() {
     ssd1306_show(&oled);
 }
 
-void core1_entry() {
+// brightness in range 0-255. Values under 255 will lose resolution.
+void put_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t brightness = 255) {
+    r *= brightness / 255;
+    g *= brightness / 255;
+    b *= brightness / 255;
+    pio_sm_put_blocking(pio0, 0, (((uint32_t)(r) << 16) | ((uint32_t)(g) << 8) | (uint32_t)(b)) << 8u);
+}
+
+void lighting_control_core_entry() {
     put_pixel(0, 0, 0);
     put_pixel(0, 0, 0);
     sleep_ms(5);
@@ -130,19 +137,27 @@ void core1_entry() {
 int main() {
     init();
 
-    multicore_launch_core1(core1_entry);
+    multicore_launch_core1(lighting_control_core_entry);
 
+    // reset OLED
     ssd1306_clear(&oled);
     ssd1306_show(&oled);
 
     while (1) {
-        tud_task();
+        tud_task(); // you just have to do this for TinyUSB
         read_input();
         send_keys();
         handle_display();
     }
 }
 
+// Not using the following callbacks:
+
+// Invoked when received GET_REPORT control request
+// Application must fill buffer report's content and return its length.
+// Return zero will cause the stack to STALL request
 uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t* buffer, uint16_t reqlen) { return 0; }
 
+// Invoked when received SET_REPORT control request or
+// received data on OUT endpoint ( Report ID = 0, Type = 0 )
 void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const* buffer, uint16_t bufsize) {}
