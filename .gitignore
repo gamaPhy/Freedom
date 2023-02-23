@@ -21,3 +21,6 @@
 # Netlist files (exported from Eeschema)
 *.net
 #######
+
+**/.vscode
+**/build
