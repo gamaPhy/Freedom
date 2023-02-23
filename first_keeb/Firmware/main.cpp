@@ -34,6 +34,11 @@ ssd1306_t oled;
 
 bool KEY0_value;
 bool KEY1_value;
+bool KEY0_pressed = false;
+bool KEY1_pressed = false;
+
+uint32_t main_hz = 0;
+uint32_t oled_hz = 0;
 
 void init() {
     // init TinyUSB for HID reporting
@@ -51,15 +56,6 @@ void init() {
     gpio_pull_down(KEY0_GPIO);
     gpio_pull_down(KEY1_GPIO);
     // TEMP
-
-    // init OLED
-    i2c_init(oled_i2c, 400000);
-    gpio_set_function(OLED_SDA_GPIO, GPIO_FUNC_I2C);
-    gpio_set_function(OLED_SCL_GPIO, GPIO_FUNC_I2C);
-    gpio_pull_up(OLED_SDA_GPIO);
-    gpio_pull_up(OLED_SCL_GPIO);
-    oled.external_vcc = false;
-    ssd1306_init(&oled, 128, 64, 0x3C, oled_i2c);
 
     // init addressable LEDs
     PIO pio = pio0;
@@ -85,21 +81,22 @@ void send_keys() {
 
     uint8_t keycode[6] = { 0 };
 
-    if (KEY0_value) {
-        keycode[0] = HID_KEY_Z;
-    }
-    if (KEY1_value) {
-        keycode[1] = HID_KEY_X;
+    if (KEY0_value != KEY0_pressed || KEY1_value != KEY1_pressed) {
+        if (KEY0_value) {
+            keycode[0] = HID_KEY_Z;
+
+        }
+        if (KEY1_value) {
+            keycode[1] = HID_KEY_X;
+        }
+
+        KEY0_pressed = KEY0_value;
+        KEY1_pressed = KEY1_value;
+
+        tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keycode);
     }
 
-    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keycode);
-}
 
-void handle_display() {
-    ssd1306_clear(&oled);
-    ssd1306_draw_string(&oled, 0, 0, 1, ("KEY0 value: " + std::to_string(KEY0_value)).c_str());
-    ssd1306_draw_string(&oled, 0, 8, 1, ("KEY1 value: " + std::to_string(KEY1_value)).c_str());
-    ssd1306_show(&oled);
 }
 
 // brightness in range 0-255. Values under 255 will lose resolution.
@@ -110,12 +107,10 @@ void put_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t brightness = 255) {
     pio_sm_put_blocking(pio0, 0, (((uint32_t)(r) << 16) | ((uint32_t)(g) << 8) | (uint32_t)(b)) << 8u);
 }
 
-void lighting_control_core_entry() {
-    put_pixel(0, 0, 0);
-    put_pixel(0, 0, 0);
-    sleep_ms(5);
-
-    while (1) {
+void handle_leds() {
+    static absolute_time_t timeout = make_timeout_time_ms(5);
+    if (get_absolute_time() >= timeout) {
+        timeout = make_timeout_time_ms(5);
         if (KEY0_value) {
             put_pixel(200, 200, 0);
         }
@@ -129,25 +124,69 @@ void lighting_control_core_entry() {
         else {
             put_pixel(0, 0, 0);
         }
+    }
+}
 
-        sleep_ms(5);
+uint baud_rate;
+
+void handle_display() {
+    ssd1306_clear(&oled);
+    ssd1306_draw_string(&oled, 0, 0, 1, ("KEY0 value: " + std::to_string(KEY0_value)).c_str());
+    ssd1306_draw_string(&oled, 0, 8, 1, ("KEY1 value: " + std::to_string(KEY1_value)).c_str());
+    ssd1306_draw_string(&oled, 0, 16, 1, ("Main Hz: " + std::to_string(main_hz)).c_str());
+    ssd1306_draw_string(&oled, 0, 24, 1, ("OLED Hz: " + std::to_string(oled_hz)).c_str());
+    ssd1306_draw_string(&oled, 0, 32, 1, ("OLED baud Hz: " + std::to_string(baud_rate)).c_str());
+    ssd1306_show(&oled);
+}
+
+void oled_control_core_entry() {
+    // init OLED
+    baud_rate = i2c_init(oled_i2c, 3000000);
+    gpio_set_function(OLED_SDA_GPIO, GPIO_FUNC_I2C);
+    gpio_set_function(OLED_SCL_GPIO, GPIO_FUNC_I2C);
+    gpio_pull_up(OLED_SDA_GPIO);
+    gpio_pull_up(OLED_SCL_GPIO);
+    oled.external_vcc = false;
+    ssd1306_init(&oled, 128, 64, 0x3C, oled_i2c);
+
+    // reset OLED
+    ssd1306_clear(&oled);
+    ssd1306_show(&oled);
+
+    absolute_time_t timeout = make_timeout_time_ms(1000);
+    uint i = 0;
+
+    while (1) {
+        handle_display();
+        if (get_absolute_time() > timeout) {
+            timeout = make_timeout_time_ms(1000);
+            oled_hz = i;
+            i = 0;
+        }
+        ++i;
     }
 }
 
 int main() {
     init();
 
-    multicore_launch_core1(lighting_control_core_entry);
+    multicore_launch_core1(oled_control_core_entry);
 
-    // reset OLED
-    ssd1306_clear(&oled);
-    ssd1306_show(&oled);
+    absolute_time_t timeout = make_timeout_time_ms(1000);
+    uint i = 0;
 
     while (1) {
         tud_task(); // you just have to do this for TinyUSB
         read_input();
         send_keys();
-        handle_display();
+        handle_leds();
+
+        if (get_absolute_time() > timeout) {
+            timeout = make_timeout_time_ms(1000);
+            main_hz = i;
+            i = 0;
+        }
+        ++i;
     }
 }
 
