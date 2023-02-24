@@ -53,8 +53,8 @@ void init() {
     // TEMP FOR TESTING WITH REGULAR BUTTON
     gpio_init(KEY0_GPIO);
     gpio_init(KEY1_GPIO);
-    gpio_pull_down(KEY0_GPIO);
-    gpio_pull_down(KEY1_GPIO);
+    gpio_pull_up(KEY0_GPIO);
+    gpio_pull_up(KEY1_GPIO);
     // TEMP
 
     // init addressable LEDs
@@ -66,11 +66,11 @@ void init() {
 void read_input() {
     // adc_select_input(KEY0_ADC);
     // adc_read();
-    KEY0_value = gpio_get(KEY0_GPIO);
+    KEY0_value = !gpio_get(KEY0_GPIO);
 
     // adc_select_input(KEY1_ADC);
     // adc_read();
-    KEY1_value = gpio_get(KEY1_GPIO);
+    KEY1_value = !gpio_get(KEY1_GPIO);
 }
 
 void send_keys() {
