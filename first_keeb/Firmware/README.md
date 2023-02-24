@@ -14,6 +14,6 @@
 
 ## stretch
 
-- [ ] non-manual FW flash
 - [ ] add oled effects while using the keypad
 - [ ] cute minigame(s)
+- [ ] web serial FW flash
