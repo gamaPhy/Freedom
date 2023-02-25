@@ -4,13 +4,16 @@
 
 - [ ] switch inputs to analog
 - [ ] calibrate keys
-- [ ] create settings menu
-  - [ ] save/load settings
-  - [ ] actuation settings
-  - [ ] rgb settings
+- [x] create settings menu
+  - [x] save/load settings
+  - [x] actuation settings
+  - [x] rgb settings
 - [ ] usb wakeup (any other usb callbacks like mount, suspend, resume, etc?)
-- [ ] tactile buttons
-  - [ ] activate internal pull ups on GPIO pins
+- [x] tactile buttons
+  - [x] activate internal pull ups on GPIO pins
+- [ ] add "hold" feature in software for buttons while in menu
+- [ ] refactor buttons into arrays/enum/structs so we can loop through them
+- [ ] look into weird bug where the first boot after a new .uf2 update starts in the menu for some reason and sometimes freezes while leaving the menu
 
 ## stretch
 
