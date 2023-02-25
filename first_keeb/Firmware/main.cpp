@@ -26,54 +26,18 @@ extern "C" {
 #include "menu.h"
 #include "gpio_config.h"
 
-ssd1306_t oled;
-
-// will clean all these up later
-
-bool KEY0_value = false;
-bool KEY1_value = false;
-bool back_btn_value = false;
-bool select_btn_value = false;
-
-bool KEY0_prev = false;
-bool KEY1_prev = false;
-bool back_btn_prev = false;
-bool select_btn_prev = false;
-
-uint64_t KEY0_last_pressed_time = 0;
-uint64_t KEY1_last_pressed_time = 0;
-uint64_t back_last_pressed_time = 0;
-uint64_t select_last_pressed_time = 0;
-
-uint64_t debounce_wait_us = 5000;
-
-bool in_menu = false;
-
 Menu menu;
+bool in_menu = false;
 
 void init() {
     // init TinyUSB for HID reporting
     tusb_init();
     tud_init(BOARD_TUD_RHPORT);
 
-    // init analog keys
-    // adc_init();
-    // adc_gpio_init(KEY0_GPIO);
-    // adc_gpio_init(KEY1_GPIO);
-
-    // TEMP FOR TESTING WITH REGULAR BUTTON
-    gpio_init(KEY0_GPIO);
-    gpio_init(KEY1_GPIO);
-    gpio_pull_up(KEY0_GPIO);
-    gpio_pull_up(KEY1_GPIO);
-    gpio_pull_up(KEY0_GPIO);
-    gpio_pull_up(KEY1_GPIO);
-    // TEMP
-
-    gpio_init(BACK_BTN_GPIO);
-    gpio_init(SELECT_BTN_GPIO);
-    gpio_pull_up(BACK_BTN_GPIO);
-    gpio_pull_up(SELECT_BTN_GPIO);
+    for (Input& input : inputs) {
+        gpio_init(input.gpio);
+        gpio_pull_up(input.gpio);
+    }
 
     // init addressable LEDs
     PIO pio = pio0;
@@ -82,54 +46,17 @@ void init() {
 }
 
 void read_input() {
-    KEY0_prev = KEY0_value;
-    KEY1_prev = KEY1_value;
-    back_btn_prev = back_btn_value;
-    select_btn_prev = select_btn_value;
-
-    // eager debounce - it's crude for now, will clean up later
-    if (!gpio_get(KEY0_GPIO)) {
-        KEY0_last_pressed_time = time_us_64();
+    for (Input& input : inputs) {
+        input.prev_pressed = input.pressed;
     }
 
-    if (!gpio_get(KEY1_GPIO)) {
-        KEY1_last_pressed_time = time_us_64();
-    }
+    // eager debounce
+    for (Input& input : inputs) {
+        if (!gpio_get(input.gpio)) {
+            input.last_time_pressed = time_us_64();
+        }
 
-    if (!gpio_get(BACK_BTN_GPIO)) {
-        back_last_pressed_time = time_us_64();
-    }
-
-    if (!gpio_get(SELECT_BTN_GPIO)) {
-        select_last_pressed_time = time_us_64();
-    }
-
-    if (time_us_64() - KEY0_last_pressed_time < debounce_wait_us) {
-        KEY0_value = true;
-    }
-    else {
-        KEY0_value = false;
-    }
-
-    if (time_us_64() - KEY1_last_pressed_time < debounce_wait_us) {
-        KEY1_value = true;
-    }
-    else {
-        KEY1_value = false;
-    }
-
-    if (time_us_64() - back_last_pressed_time < debounce_wait_us) {
-        back_btn_value = true;
-    }
-    else {
-        back_btn_value = false;
-    }
-
-    if (time_us_64() - select_last_pressed_time < debounce_wait_us) {
-        select_btn_value = true;
-    }
-    else {
-        select_btn_value = false;
+        input.pressed = time_us_64() - input.last_time_pressed < debounce_wait_us;
     }
 }
 
@@ -139,29 +66,26 @@ void send_keys() {
         return;
     }
 
+    static uint8_t keycode_prev[6] = { 0 };
     uint8_t keycode[6] = { 0 };
 
-    if (KEY0_value != KEY0_prev || KEY1_value != KEY1_prev) {
-        if (KEY0_value) {
-            keycode[0] = HID_KEY_Z;
-
+    for (int key_num = 0; key_num < NUM_KEYS; ++key_num) {
+        if (inputs[key_num].pressed) {
+            keycode[key_num] = inputs[key_num].hid_key;
         }
-        if (KEY1_value) {
-            keycode[1] = HID_KEY_X;
-        }
+    }
 
-        KEY0_prev = KEY0_value;
-        KEY1_prev = KEY1_value;
-
+    if (memcmp(keycode_prev, keycode, 6) != 0) {
+        memcpy(keycode_prev, keycode, 6);
         tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keycode);
     }
 }
 
 // brightness in range 0-255. Values under 255 will lose resolution.
 void put_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t brightness = 255) {
-    r *= brightness / 255;
-    g *= brightness / 255;
-    b *= brightness / 255;
+    r = r * brightness / 255;
+    g = g * brightness / 255;
+    b = b * brightness / 255;
     pio_sm_put_blocking(pio0, 0, (((uint32_t)(r) << 16) | ((uint32_t)(g) << 8) | (uint32_t)(b)) << 8u);
 }
 
@@ -174,18 +98,12 @@ void handle_leds() {
     if (time_us_64() > last_message_time + 500) {
         last_message_time = time_us_64();
 
-        if (KEY1_value || settings.rgb_mode == RGB_STATIC) {
-            put_pixel(settings.rgb_r, settings.rgb_g, settings.rgb_b);
-        }
-        else {
-            put_pixel(0, 0, 0);
-        }
-
-        if (KEY0_value || settings.rgb_mode == RGB_STATIC) {
-            put_pixel(settings.rgb_r, settings.rgb_g, settings.rgb_b);
-        }
-        else {
-            put_pixel(0, 0, 0);
+        for (int key_num = 0; key_num <= NUM_KEYS; ++key_num) {
+            if (inputs[key_num].pressed || settings.rgb_mode == RGB_STATIC) {
+                put_pixel(settings.rgb_r, settings.rgb_g, settings.rgb_b);
+            } else {
+                put_pixel(0, 0, 0);
+            }
         }
     }
 }
@@ -199,10 +117,9 @@ void handle_display() {
             ssd1306_draw_string(&oled, 0, y, 1, line.c_str());
             y += 8;
         }
-    }
-    else {
-        ssd1306_draw_string(&oled, 0, 0, 1, ("KEY0 value: " + std::to_string(KEY0_value)).c_str());
-        ssd1306_draw_string(&oled, 0, 8, 1, ("KEY1 value: " + std::to_string(KEY1_value)).c_str());
+    } else {
+        ssd1306_draw_string(&oled, 0, 0, 1, ("KEY0 press: " + std::to_string(inputs[KEY0].pressed)).c_str());
+        ssd1306_draw_string(&oled, 0, 8, 1, ("KEY1 press: " + std::to_string(inputs[KEY1].pressed)).c_str());
     }
 
     ssd1306_show(&oled);
@@ -230,28 +147,26 @@ void oled_control_core_entry() {
     }
 }
 
+bool newly_pressed(input_t input) { return inputs[input].pressed && !inputs[input].prev_pressed; }
+
 void enter_menu() {
     menu.reset();
     while (1) {
         read_input();
         handle_leds();
 
-        // do (value && !prev) or else its impossible to control because one click will advance in that direction many times
         // implement slow moving hold later
-        if (back_btn_value && !back_btn_prev) {
+        if (newly_pressed(BACK_BTN)) {
             // if we cannot go back, it means we are at the root menu, so exit the menu
             int went_back_to_directory = menu.go_back();
             if (!went_back_to_directory) {
                 return;
             }
-        }
-        else if (select_btn_value && !select_btn_prev) {
+        } else if (newly_pressed(SELECT_BTN)) {
             menu.select();
-        }
-        else if (KEY0_value && !KEY0_prev) {
+        } else if (newly_pressed(KEY0)) {
             menu.key_0_event();
-        }
-        else if (KEY1_value && !KEY1_prev) {
+        } else if (newly_pressed(KEY1)) {
             menu.key_1_event();
         }
     }
@@ -267,7 +182,7 @@ int main() {
         read_input();
         send_keys();
         handle_leds();
-        if (select_btn_value) {
+        if (inputs[SELECT_BTN].pressed) {
             in_menu = true;
             enter_menu();
             in_menu = false;
@@ -284,4 +199,4 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
 
 // Invoked when received SET_REPORT control request or
 // received data on OUT endpoint ( Report ID = 0, Type = 0 )
-void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const* buffer, uint16_t bufsize) {}
+void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const* buffer, uint16_t bufsize) { }
