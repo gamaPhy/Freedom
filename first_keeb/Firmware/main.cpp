@@ -1,9 +1,12 @@
 #define _GNU_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <string>
 #include <iostream>
 #include <cstring>
+#include <variant>
+#include <vector>
+#include <algorithm>
 
 #include "hardware/adc.h"
 #include "hardware/gpio.h"
@@ -14,31 +17,39 @@
 #include "usb_descriptors.h"
 #include "pico/multicore.h"
 #include "hardware/flash.h"
+#include <hardware/sync.h>
 extern "C" {
 #include "ssd1306/ssd1306.h"
 }
 
-// analog keys
-const uint8_t KEY0_GPIO = 26;
-const uint8_t KEY0_ADC = 0;
-const uint8_t KEY1_GPIO = 27;
-const uint8_t KEY1_ADC = 1;
+#include "settings_util.h"
+#include "menu.h"
+#include "gpio_config.h"
 
-// addressable LEDs
-const uint8_t WS2812B_GPIO = 13;
-
-const uint8_t OLED_SDA_GPIO = 14;
-const uint8_t OLED_SCL_GPIO = 15;
-i2c_inst* oled_i2c = i2c1;
 ssd1306_t oled;
 
-bool KEY0_value;
-bool KEY1_value;
-bool KEY0_pressed = false;
-bool KEY1_pressed = false;
+// will clean all these up later
 
-uint32_t main_hz = 0;
-uint32_t oled_hz = 0;
+bool KEY0_value = false;
+bool KEY1_value = false;
+bool back_btn_value = false;
+bool select_btn_value = false;
+
+bool KEY0_prev = false;
+bool KEY1_prev = false;
+bool back_btn_prev = false;
+bool select_btn_prev = false;
+
+uint64_t KEY0_last_pressed_time = 0;
+uint64_t KEY1_last_pressed_time = 0;
+uint64_t back_last_pressed_time = 0;
+uint64_t select_last_pressed_time = 0;
+
+uint64_t debounce_wait_us = 5000;
+
+bool in_menu = false;
+
+Menu menu;
 
 void init() {
     // init TinyUSB for HID reporting
@@ -55,7 +66,14 @@ void init() {
     gpio_init(KEY1_GPIO);
     gpio_pull_up(KEY0_GPIO);
     gpio_pull_up(KEY1_GPIO);
+    gpio_pull_up(KEY0_GPIO);
+    gpio_pull_up(KEY1_GPIO);
     // TEMP
+
+    gpio_init(BACK_BTN_GPIO);
+    gpio_init(SELECT_BTN_GPIO);
+    gpio_pull_up(BACK_BTN_GPIO);
+    gpio_pull_up(SELECT_BTN_GPIO);
 
     // init addressable LEDs
     PIO pio = pio0;
@@ -64,13 +82,55 @@ void init() {
 }
 
 void read_input() {
-    // adc_select_input(KEY0_ADC);
-    // adc_read();
-    KEY0_value = !gpio_get(KEY0_GPIO);
+    KEY0_prev = KEY0_value;
+    KEY1_prev = KEY1_value;
+    back_btn_prev = back_btn_value;
+    select_btn_prev = select_btn_value;
 
-    // adc_select_input(KEY1_ADC);
-    // adc_read();
-    KEY1_value = !gpio_get(KEY1_GPIO);
+    // eager debounce - it's crude for now, will clean up later
+    if (!gpio_get(KEY0_GPIO)) {
+        KEY0_last_pressed_time = time_us_64();
+    }
+
+    if (!gpio_get(KEY1_GPIO)) {
+        KEY1_last_pressed_time = time_us_64();
+    }
+
+    if (!gpio_get(BACK_BTN_GPIO)) {
+        back_last_pressed_time = time_us_64();
+    }
+
+    if (!gpio_get(SELECT_BTN_GPIO)) {
+        select_last_pressed_time = time_us_64();
+    }
+
+    if (time_us_64() - KEY0_last_pressed_time < debounce_wait_us) {
+        KEY0_value = true;
+    }
+    else {
+        KEY0_value = false;
+    }
+
+    if (time_us_64() - KEY1_last_pressed_time < debounce_wait_us) {
+        KEY1_value = true;
+    }
+    else {
+        KEY1_value = false;
+    }
+
+    if (time_us_64() - back_last_pressed_time < debounce_wait_us) {
+        back_btn_value = true;
+    }
+    else {
+        back_btn_value = false;
+    }
+
+    if (time_us_64() - select_last_pressed_time < debounce_wait_us) {
+        select_btn_value = true;
+    }
+    else {
+        select_btn_value = false;
+    }
 }
 
 void send_keys() {
@@ -81,7 +141,7 @@ void send_keys() {
 
     uint8_t keycode[6] = { 0 };
 
-    if (KEY0_value != KEY0_pressed || KEY1_value != KEY1_pressed) {
+    if (KEY0_value != KEY0_prev || KEY1_value != KEY1_prev) {
         if (KEY0_value) {
             keycode[0] = HID_KEY_Z;
 
@@ -90,13 +150,11 @@ void send_keys() {
             keycode[1] = HID_KEY_X;
         }
 
-        KEY0_pressed = KEY0_value;
-        KEY1_pressed = KEY1_value;
+        KEY0_prev = KEY0_value;
+        KEY1_prev = KEY1_value;
 
         tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keycode);
     }
-
-
 }
 
 // brightness in range 0-255. Values under 255 will lose resolution.
@@ -108,18 +166,20 @@ void put_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t brightness = 255) {
 }
 
 void handle_leds() {
-    static absolute_time_t timeout = make_timeout_time_ms(5);
-    if (get_absolute_time() >= timeout) {
-        timeout = make_timeout_time_ms(5);
-        if (KEY0_value) {
-            put_pixel(200, 200, 0);
+    // send new data to LEDs every 500 microseconds
+    static uint64_t last_message_time = time_us_64();
+    if (time_us_64() > last_message_time + 500) {
+        last_message_time = time_us_64();
+
+        if (KEY1_value) {
+            put_pixel(settings.rgb_r, settings.rgb_g, settings.rgb_b);
         }
         else {
             put_pixel(0, 0, 0);
         }
 
-        if (KEY1_value) {
-            put_pixel(0, 200, 100);
+        if (KEY0_value) {
+            put_pixel(settings.rgb_r, settings.rgb_g, settings.rgb_b);
         }
         else {
             put_pixel(0, 0, 0);
@@ -127,21 +187,27 @@ void handle_leds() {
     }
 }
 
-uint baud_rate;
-
 void handle_display() {
     ssd1306_clear(&oled);
-    ssd1306_draw_string(&oled, 0, 0, 1, ("KEY0 value: " + std::to_string(KEY0_value)).c_str());
-    ssd1306_draw_string(&oled, 0, 8, 1, ("KEY1 value: " + std::to_string(KEY1_value)).c_str());
-    ssd1306_draw_string(&oled, 0, 16, 1, ("Main Hz: " + std::to_string(main_hz)).c_str());
-    ssd1306_draw_string(&oled, 0, 24, 1, ("OLED Hz: " + std::to_string(oled_hz)).c_str());
-    ssd1306_draw_string(&oled, 0, 32, 1, ("OLED baud Hz: " + std::to_string(baud_rate)).c_str());
+
+    if (in_menu) {
+        uint32_t y = 0;
+        for (std::string line : menu.get_display_strings()) {
+            ssd1306_draw_string(&oled, 0, y, 1, line.c_str());
+            y += 8;
+        }
+    }
+    else {
+        ssd1306_draw_string(&oled, 0, 0, 1, ("KEY0 value: " + std::to_string(KEY0_value)).c_str());
+        ssd1306_draw_string(&oled, 0, 8, 1, ("KEY1 value: " + std::to_string(KEY1_value)).c_str());
+    }
+
     ssd1306_show(&oled);
 }
 
 void oled_control_core_entry() {
     // init OLED
-    baud_rate = i2c_init(oled_i2c, 3000000);
+    i2c_init(oled_i2c, 3000000);
     gpio_set_function(OLED_SDA_GPIO, GPIO_FUNC_I2C);
     gpio_set_function(OLED_SCL_GPIO, GPIO_FUNC_I2C);
     gpio_pull_up(OLED_SDA_GPIO);
@@ -153,40 +219,56 @@ void oled_control_core_entry() {
     ssd1306_clear(&oled);
     ssd1306_show(&oled);
 
-    absolute_time_t timeout = make_timeout_time_ms(1000);
-    uint i = 0;
-
     while (1) {
-        handle_display();
-        if (get_absolute_time() > timeout) {
-            timeout = make_timeout_time_ms(1000);
-            oled_hz = i;
-            i = 0;
+        while (core1_lockout) {
+            sleep_ms(5); // idk why I need this but it freezes without it 
         }
-        ++i;
+        handle_display();
+    }
+}
+
+void enter_menu() {
+    menu.reset();
+    while (1) {
+        read_input();
+        handle_leds();
+
+        // do (value && !prev) or else its impossible to control because one click will advance in that direction many times
+        // implement slow moving hold later
+        if (back_btn_value && !back_btn_prev) {
+            // if we cannot go back, it means we are at the root menu, so exit the menu
+            int went_back_to_directory = menu.go_back();
+            if (!went_back_to_directory) {
+                return;
+            }
+        }
+        else if (select_btn_value && !select_btn_prev) {
+            menu.select();
+        }
+        else if (KEY0_value && !KEY0_prev) {
+            menu.key_0_event();
+        }
+        else if (KEY1_value && !KEY1_prev) {
+            menu.key_1_event();
+        }
     }
 }
 
 int main() {
     init();
-
+    settings = get_settings();
     multicore_launch_core1(oled_control_core_entry);
 
-    absolute_time_t timeout = make_timeout_time_ms(1000);
-    uint i = 0;
-
     while (1) {
-        tud_task(); // you just have to do this for TinyUSB
+        tud_task(); // have to do this for TinyUSB
         read_input();
         send_keys();
         handle_leds();
-
-        if (get_absolute_time() > timeout) {
-            timeout = make_timeout_time_ms(1000);
-            main_hz = i;
-            i = 0;
+        if (select_btn_value) {
+            in_menu = true;
+            enter_menu();
+            in_menu = false;
         }
-        ++i;
     }
 }
 

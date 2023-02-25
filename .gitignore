@@ -24,3 +24,4 @@
 
 **/.vscode
 **/build
+!/**/build/*.uf2

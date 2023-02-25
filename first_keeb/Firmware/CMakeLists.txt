@@ -4,6 +4,7 @@ include(pico_sdk_import.cmake)
 project(first_keeb C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
+set(PICO_CXX_ENABLE_RTTI 1)
 pico_sdk_init()
 
 add_executable(main
@@ -23,6 +24,8 @@ target_link_libraries(main
   hardware_pio
   tinyusb_board
   tinyusb_device
+  hardware_flash
+  hardware_sync
 )
 
 pico_enable_stdio_usb(main 1)
