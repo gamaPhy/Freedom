@@ -166,19 +166,22 @@ void put_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t brightness = 255) {
 }
 
 void handle_leds() {
+    if (settings.rgb_mode == RGB_OFF) {
+        return;
+    }
     // send new data to LEDs every 500 microseconds
     static uint64_t last_message_time = time_us_64();
     if (time_us_64() > last_message_time + 500) {
         last_message_time = time_us_64();
 
-        if (KEY1_value) {
+        if (KEY1_value || settings.rgb_mode == RGB_STATIC) {
             put_pixel(settings.rgb_r, settings.rgb_g, settings.rgb_b);
         }
         else {
             put_pixel(0, 0, 0);
         }
 
-        if (KEY0_value) {
+        if (KEY0_value || settings.rgb_mode == RGB_STATIC) {
             put_pixel(settings.rgb_r, settings.rgb_g, settings.rgb_b);
         }
         else {
