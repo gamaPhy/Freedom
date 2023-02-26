@@ -17,3 +17,6 @@ const uint8_t WS2812B_GPIO = 13;
 const uint8_t OLED_SDA_GPIO = 14;
 const uint8_t OLED_SCL_GPIO = 15;
 i2c_inst* oled_i2c = i2c1;
+
+// boot sel
+const uint8_t BOOTSEL_GPIO = 0;

@@ -16,6 +16,7 @@
 #include "tusb.h"
 #include "usb_descriptors.h"
 #include "pico/multicore.h"
+#include "pico/bootrom.h"
 #include "hardware/flash.h"
 #include <hardware/sync.h>
 extern "C" {
@@ -34,16 +35,19 @@ bool KEY0_value = false;
 bool KEY1_value = false;
 bool back_btn_value = false;
 bool select_btn_value = false;
+bool bootsel_value = false;
 
 bool KEY0_prev = false;
 bool KEY1_prev = false;
 bool back_btn_prev = false;
 bool select_btn_prev = false;
+bool bootsel_prev = false;
 
 uint64_t KEY0_last_pressed_time = 0;
 uint64_t KEY1_last_pressed_time = 0;
 uint64_t back_last_pressed_time = 0;
 uint64_t select_last_pressed_time = 0;
+uint64_t bootsel_last_pressed_time = 0;
 
 uint64_t debounce_wait_us = 5000;
 
@@ -66,14 +70,18 @@ void init() {
     gpio_init(KEY1_GPIO);
     gpio_pull_up(KEY0_GPIO);
     gpio_pull_up(KEY1_GPIO);
-    gpio_pull_up(KEY0_GPIO);
-    gpio_pull_up(KEY1_GPIO);
+
     // TEMP
 
     gpio_init(BACK_BTN_GPIO);
     gpio_init(SELECT_BTN_GPIO);
     gpio_pull_up(BACK_BTN_GPIO);
     gpio_pull_up(SELECT_BTN_GPIO);
+
+
+    // init bootsel button
+    gpio_init(BACK_BTN_GPIO);
+    gpio_pull_up(BOOTSEL_GPIO);
 
     // init addressable LEDs
     PIO pio = pio0;
@@ -86,6 +94,9 @@ void read_input() {
     KEY1_prev = KEY1_value;
     back_btn_prev = back_btn_value;
     select_btn_prev = select_btn_value;
+    bootsel_prev = bootsel_value;
+
+    
 
     // eager debounce - it's crude for now, will clean up later
     if (!gpio_get(KEY0_GPIO)) {
@@ -102,6 +113,10 @@ void read_input() {
 
     if (!gpio_get(SELECT_BTN_GPIO)) {
         select_last_pressed_time = time_us_64();
+    }
+
+    if (!gpio_get(BOOTSEL_GPIO)) {
+        bootsel_last_pressed_time = time_us_64();
     }
 
     if (time_us_64() - KEY0_last_pressed_time < debounce_wait_us) {
@@ -130,6 +145,13 @@ void read_input() {
     }
     else {
         select_btn_value = false;
+    }
+
+    if (time_us_64() - bootsel_last_pressed_time < debounce_wait_us) {
+        bootsel_value = true;
+    }
+    else {
+        bootsel_value = false;
     }
 }
 
@@ -257,6 +279,16 @@ void enter_menu() {
     }
 }
 
+void handle_bootsel() {
+    // TODO have user hold bootsel button for 1 second instead of instantly executing it.
+    // TODO find a way to start running new image so that rp2040 doesn't need manual reset.
+    if (bootsel_prev != bootsel_value) {
+        if (bootsel_value) {
+            reset_usb_boot(1, 0);
+        }
+    }
+}
+
 int main() {
     init();
     settings = get_settings();
@@ -267,7 +299,9 @@ int main() {
         read_input();
         send_keys();
         handle_leds();
-        if (select_btn_value) {
+        handle_bootsel();
+        if (select_btn_value)
+        {
             in_menu = true;
             enter_menu();
             in_menu = false;
