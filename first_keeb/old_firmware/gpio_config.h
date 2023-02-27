@@ -15,7 +15,7 @@ const uint8_t NUM_KEYS = 2;
 enum input_t { KEY0, KEY1, BACK_BTN, SELECT_BTN, BOOTSEL_BTN };
 std::vector<Input> inputs = { {26, HID_KEY_Z}, {27, HID_KEY_X}, {16, HID_KEY_NONE}, {17, HID_KEY_NONE}, {0, HID_KEY_NONE} };
 
-uint64_t debounce_wait_us = 5000;
+uint64_t debounce_wait_us = 50;
 
 // addressable LEDs
 const uint8_t WS2812B_GPIO = 13;
