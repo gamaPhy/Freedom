@@ -1,0 +1,8 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"J1","Conn_01x05_Socket","PinSocket_1x05_P2.54mm_Vertical",25.700000,-48.869000,-90.000000,top
+"J2","Conn_01x01_Socket","PinSocket_1x01_P2.54mm_Vertical",25.984000,-1.092000,0.000000,top
+"REF**","SW_Lekker_MX_1.00u_PCB","SW_Lekker_MX_1.00u_PCB",19.500000,-30.000000,0.000000,top
+"REF**","SW_Lekker_MX_1.00u_PCB","SW_Lekker_MX_1.00u_PCB",-19.500000,-30.000000,0.000000,top
+"REF**","SW_Lekker_MX_1.00u_PCB","SW_Lekker_MX_1.00u_PCB",0.000000,-30.000000,0.000000,top
+"SW1","SW_Push","2-1825027-0_Right_Angle_Button",-12.000000,-4.000000,180.000000,top
+"SW2","SW_Push","2-1825027-0_Right_Angle_Button",12.000000,-4.000000,0.000000,top
