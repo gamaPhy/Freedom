@@ -1,2 +1,3 @@
-BOARD = GENERIC_RP_RP2040
 WS2812_DRIVER = vendor
+SRC += matrix.c
+SRC += analog.c

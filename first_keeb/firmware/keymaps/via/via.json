@@ -1,0 +1,56 @@
+{
+    "name": "3a2d",
+    "vendorId": "0xFFAA",
+    "productId": "0x3331",
+    "matrix": {
+        "rows": 2,
+        "cols": 3
+    },
+    "menus": [
+        "qmk_rgb_matrix",
+        "qmk_rgblight"
+    ],
+    "customKeycodes": [
+        {
+            "name": "Set Actuation",
+            "title": "Hold this key and press key 0 to decrease the actuation point, key 1 to toggle rapid trigger, or key 2 to increase the actuation point.",
+            "shortName": "Set"
+        }
+    ],
+    "layouts": {
+        "keymap": [
+            [
+                {
+                  "x": 1.15,
+                  "w": 1.5,
+                  "h": 1.5
+                },
+                "0,0",
+                {
+                  "x": 0.5,
+                  "w": 1.5,
+                  "h": 1.5
+                },
+                "0,1"
+            ],
+            [
+                {
+                  "y": 1,
+                  "w": 2,
+                  "h": 2
+                },
+                "1,0",
+                {
+                  "w": 2,
+                  "h": 2
+                },
+                "1,1",
+                {
+                  "w": 2,
+                  "h": 2
+                },
+                "1,2"
+            ]
+        ]
+    }
+}
