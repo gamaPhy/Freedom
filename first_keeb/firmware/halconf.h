@@ -2,5 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
-#define RGB_MATRIX_LED_COUNT 2
-#define RGB_DI_PIN GP13
+#define HAL_USE_ADC TRUE
+
+#include_next <halconf.h>

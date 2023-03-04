@@ -1,16 +1,17 @@
 {
-    "keyboard_name": "2a2d",
+    "keyboard_name": "3a2d",
     "manufacturer": "T&T",
     "url": "",
-    "maintainer": "ThailerL",
+    "maintainer": "ThailerL, tlietz",
     "usb": {
         "device_version": "0.0.1",
-        "pid": "0x3331",
-        "vid": "0xFFAA"
+        "vid": "0xFFAA",
+        "pid": "0x3331"
     },
     "build": {
         "debounce_type": "sym_eager_pk",
-        "firmware_format": "uf2"
+        "firmware_format": "uf2",
+        "lto": true
     },
     "features": {
         "console": true,
@@ -18,28 +19,34 @@
     },
     "processor": "RP2040",
     "bootloader": "rp2040",
+    "board": "GENERIC_RP_RP2040",
     "matrix_pins": {
+        "custom_lite": true,
         "direct": [
-            ["GP26", "GP27"],
-            ["GP16", "GP17"]
+            ["GP16", "GP17", "NO_PIN"],
+            ["GP26", "GP27", "GP28"]
         ]
     },
     "layouts": {
         "LAYOUT": {
             "layout": [
-                {"label":"Z", "matrix": [0, 0], "x": 0, "y": 0},
-                {"label":"X", "matrix": [0, 1], "x": 1, "y": 0},
-                {"label":"CYCLE", "matrix": [1, 0], "x":0.25, "y":1.5, "w":0.5, "h":0.5},
-                {"label":"SETTINGS", "matrix": [1, 1],"x":1.25, "y":1.5, "w":0.5, "h":0.5}
+                {"label":"Button 1", "matrix": [0, 0], "x":0.75, "y":0, "w":0.5, "h":0.5},
+                {"label":"Button 2", "matrix": [0, 1],"x":1.75, "y":0, "w":0.5, "h":0.5},
+                {"label":"Key 1", "matrix": [1, 0], "x": 0, "y": 1},
+                {"label":"Key 2", "matrix": [1, 1], "x": 1, "y": 1},
+                {"label":"Key 2", "matrix": [1, 2], "x": 1, "y": 2}
             ]
         }
     },
     "rgb_matrix": {
         "driver": "WS2812",
         "layout" : [
-            { "matrix": [0, 0], "x": 0, "y": 0},
-            { "matrix": [0, 1], "x": 1, "y": 0}
+            { "matrix": [1, 0], "x": 0, "y": 0},
+            { "matrix": [1, 1], "x": 1, "y": 0}
         ],
         "rgb_matrix_led_count": 2
+    },
+    "mouse_key": {
+        "enabled": true
     }
 }
