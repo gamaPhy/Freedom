@@ -6,23 +6,26 @@
 #include "analog.h"
 
 enum custom_keycodes {
-    KC_SET_ACTUATION = QK_USER,
-    KC_CALIBRATE,
+    KC_CALIBRATE = QK_USER,
     KC_TOGGLE_RAPID_TRIGGER,
     KC_ACTUATION_DEC,
     KC_ACTUATION_INC,
     NEW_QK_USER
 };
 
-// 10 = 1.0mm
-extern int actuation_point_mm;
 extern bool changing_actuation_settings;
 extern bool calibrating_sensors;
-extern bool rapid_trigger_on;
 
 typedef struct {
-    int min;
-    int max;
+    uint16_t min;
+    uint16_t max;
 } sensor_bounds_t;
 
-extern sensor_bounds_t  matrix_sensor_bounds[MATRIX_COLS];
+typedef struct {
+    bool rapid_trigger;
+    uint8_t actuation_point_mm;
+    uint8_t release_point_mm;
+    sensor_bounds_t matrix_sensor_bounds[MATRIX_COLS];
+} kb_config_t;
+
+extern kb_config_t kb_config;

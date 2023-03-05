@@ -14,8 +14,7 @@
         "lto": true
     },
     "features": {
-        "console": true,
-        "rgb_matrix": true
+        "console": true
     },
     "processor": "RP2040",
     "bootloader": "rp2040",
@@ -23,7 +22,7 @@
     "matrix_pins": {
         "custom_lite": true,
         "direct": [
-            ["GP16", "GP17", "NO_PIN"],
+            ["GP15", "GP14", "NO_PIN"],
             ["GP26", "GP27", "GP28"]
         ]
     },
@@ -37,16 +36,5 @@
                 {"label":"Key 2", "matrix": [1, 2], "x": 1, "y": 2}
             ]
         }
-    },
-    "rgb_matrix": {
-        "driver": "WS2812",
-        "layout" : [
-            { "matrix": [1, 0], "x": 0, "y": 0},
-            { "matrix": [1, 1], "x": 1, "y": 0}
-        ],
-        "rgb_matrix_led_count": 2
-    },
-    "mouse_key": {
-        "enabled": true
     }
 }
