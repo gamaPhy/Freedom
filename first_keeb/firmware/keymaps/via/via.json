@@ -7,14 +7,55 @@
         "cols": 3
     },
     "menus": [
-        "qmk_rgb_matrix",
-        "qmk_rgblight"
+        {
+            "label": "Actuation settings",
+            "content": [
+                {
+                    "label": "Actuation settings",
+                    "content": [
+                        {
+                            "label": "Rapid trigger",
+                            "type": "toggle",
+                            "content": ["id_kb_rapid_trigger", 0, 1]
+                        },
+                        {
+                            "label": "Actuation distance",
+                            "type": "range",
+                            "options": [1, 40],
+                            "content": ["id_kb_actuation_point_mm", 0, 2]
+                        },
+                        {
+                            "showIf": "{id_kb_rapid_trigger} == 0",
+                            "label": "Release distance",
+                            "type": "range",
+                            "options": [1, 40],
+                            "content": ["id_kb_release_point_mm", 0, 3]
+                        }
+                    ]
+                }
+            ]
+        }
     ],
     "customKeycodes": [
         {
-            "name": "Set Actuation",
-            "title": "Hold this key and press key 0 to decrease the actuation point, key 1 to toggle rapid trigger, or key 2 to increase the actuation point.",
-            "shortName": "Set"
+            "name": "Calibrate",
+            "title": "To calibrate sensors, hold 'Calibrate' and press each key.",
+            "shortName": "Calibrate"
+        },
+        {
+            "name": "KC_TOGGLE_RAPID_TRIGGER",
+            "title": "KC_TOGGLE_RAPID_TRIGGER",
+            "shortName": "KC_TOGGLE_RAPID_TRIGGER"
+        },
+        {
+            "name": "KC_ACTUATION_DEC",
+            "title": "KC_ACTUATION_DEC",
+            "shortName": "KC_ACTUATION_DEC"
+        },
+        {
+            "name": "KC_ACTUATION_INC",
+            "title": "KC_ACTUATION_INC",
+            "shortName": "KC_ACTUATION_INC"
         }
     ],
     "layouts": {
