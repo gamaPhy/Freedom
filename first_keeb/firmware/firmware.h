@@ -6,11 +6,11 @@
 #include "analog.h"
 
 enum custom_keycodes {
-    KC_CALIBRATE = QK_USER,
+    KC_CALIBRATE = QK_KB,
     KC_TOGGLE_RAPID_TRIGGER,
     KC_ACTUATION_DEC,
     KC_ACTUATION_INC,
-    NEW_QK_USER
+    NEW_QK_KB
 };
 
 extern bool changing_actuation_settings;

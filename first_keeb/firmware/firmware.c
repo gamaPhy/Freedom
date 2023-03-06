@@ -56,7 +56,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         }
         return false;
     case KC_ACTUATION_INC:
-        if (kb_config.actuation_point_mm < 40){
+        if (kb_config.actuation_point_mm < 40) {
             ++kb_config.actuation_point_mm;
             eeconfig_update_kb_datablock(&kb_config);
         }

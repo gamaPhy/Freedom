@@ -38,57 +38,57 @@
     ],
     "customKeycodes": [
         {
-            "name": "Calibrate",
-            "title": "To calibrate sensors, hold 'Calibrate' and press each key.",
+            "name": "Calib",
+            "title": "Calibrate: To calibrate sensors, hold 'Calibrate' and then press each key all the way.",
             "shortName": "Calibrate"
         },
         {
-            "name": "KC_TOGGLE_RAPID_TRIGGER",
-            "title": "KC_TOGGLE_RAPID_TRIGGER",
-            "shortName": "KC_TOGGLE_RAPID_TRIGGER"
+            "name": "Toggle\nRapid\nTrigger",
+            "title": "Toggle rapid trigger",
+            "shortName": "RapidTrigger"
         },
         {
-            "name": "KC_ACTUATION_DEC",
-            "title": "KC_ACTUATION_DEC",
-            "shortName": "KC_ACTUATION_DEC"
+            "name": "Dec (-)\nActuate\nDist",
+            "title": "Decrease actuation distance by 0.1mm (decreases the key travel needed to actuate)",
+            "shortName": "DecActuateDist"
         },
         {
-            "name": "KC_ACTUATION_INC",
-            "title": "KC_ACTUATION_INC",
-            "shortName": "KC_ACTUATION_INC"
+            "name": "Inc (+)\nActuate\nDist",
+            "title": "Increase actuation distance by 0.1mm (increases the key travel needed to actuate)",
+            "shortName": "IncActuateDist"
         }
     ],
     "layouts": {
         "keymap": [
             [
                 {
-                  "x": 1.15,
-                  "w": 1.5,
-                  "h": 1.5
+                    "x": 1.15,
+                    "w": 1.5,
+                    "h": 1.5
                 },
                 "0,0",
                 {
-                  "x": 0.5,
-                  "w": 1.5,
-                  "h": 1.5
+                    "x": 0.5,
+                    "w": 1.5,
+                    "h": 1.5
                 },
                 "0,1"
             ],
             [
                 {
-                  "y": 1,
-                  "w": 2,
-                  "h": 2
+                    "y": 1,
+                    "w": 2,
+                    "h": 2
                 },
                 "1,0",
                 {
-                  "w": 2,
-                  "h": 2
+                    "w": 2,
+                    "h": 2
                 },
                 "1,1",
                 {
-                  "w": 2,
-                  "h": 2
+                    "w": 2,
+                    "h": 2
                 },
                 "1,2"
             ]
