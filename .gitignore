@@ -1,8 +1,6 @@
 
 
-###### For PCBs designed using KiCad: http://www.kicad-pcb.org/
-# Format documentation: http://kicad-pcb.org/help/file-formats/
-
+###### KiCad
 # Temporary files
 **/*.000
 **/*.bak
@@ -23,6 +21,17 @@
 *.net
 #######
 
+###### Firmware
 **/.vscode
 **/build
 !/**/build/*.uf2
+
+#####
+
+##### Freecad
+*.pyc
+*.fcstd1
+*.FCStd1
+*.fcstd2
+*.FCStd2
+Private
