@@ -1,0 +1,25 @@
+Designator,Comment,Footprint
+"C1, C2",10u,Capacitor_SMD:C_0805_2012Metric
+"C3, C4, C5, C6, C7, C8, C9, C10, C13, C15, C22, C23, C24, C25, C26, C27, C28, C29",100n,Capacitor_SMD:C_0402_1005Metric
+"C11, C12, C14, C16, C19, C20, C21",1u,Capacitor_SMD:C_0402_1005Metric
+"C17, C18",27p,Capacitor_SMD:C_0402_1005Metric
+"D1, D2, D3, D4, D5, D6, D7, D8",WS2812B-2020,LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm
+F1,0ZCJ0025AF2E,Fuse:Fuse_1206_3216Metric
+"H1, H2, H3, H4, H5",4881_M3_Threaded_Insert,MountingHole:4881_M3_Threaded_Insert
+P1,USB4105-GF-A,Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal
+Q1,SN74LV1T34DBV,Package_TO_SOT_SMD:SOT-23-5
+R1,200R,Capacitor_SMD:C_0603_1608Metric
+"R2, R3",5.1k,Capacitor_SMD:C_0402_1005Metric
+R4,1R,Capacitor_SMD:C_0603_1608Metric
+"R5, R6",27R,Capacitor_SMD:C_0402_1005Metric
+R7,10k,Capacitor_SMD:C_0402_1005Metric
+R8,1k,Capacitor_SMD:C_0402_1005Metric
+"S1, S2, S3",SS39ET,Package_TO_SOT_SMD:SOT-23-3
+"SW1, SW2",SW_Push,Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm
+SW3,SKRKAGE020,Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK
+U1,NCP1117-3.3_SOT223,Package_TO_SOT_SMD:SOT-223-3_TabPin2
+U2,LM4040DBZ-3,Package_TO_SOT_SMD:SOT-23
+U3,PRTR5V0U2X,Package_TO_SOT_SMD:SOT-143
+U4,W25Q32JVSS,Package_SO:SOIC-8_5.23x5.23mm_P1.27mm
+U5,RP2040,RP2040_minimal:RP2040-QFN-56
+Y1,ABM7-12.000MHZ-D2Y-T,Crystal:Crystal_SMD_Abracon_ABM7-2Pin_6.0x3.5mm
