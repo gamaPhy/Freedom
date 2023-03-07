@@ -680,7 +680,7 @@
       "idf": "",
       "netlist": "../../../../../../../../Applications/KiCad/",
       "specctra_dsn": "",
-      "step": "",
+      "step": "RP2040_minimal.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
