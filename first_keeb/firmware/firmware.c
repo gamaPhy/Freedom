@@ -11,6 +11,7 @@ void eeconfig_init_kb(void) {
     kb_config.rapid_trigger = true;
     kb_config.actuation_point_mm = 20;
     kb_config.release_point_mm = 16;
+    kb_config.rapid_trigger_sensitivity = 10;
     for (int row = 0; row < MATRIX_ROWS; row++) {
         for (int col = 0; col < MATRIX_COLS; col++) {
             if (pin_scan_modes[row][col] == ANALOG) {

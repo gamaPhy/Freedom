@@ -28,6 +28,7 @@ typedef struct {
     bool rapid_trigger;
     uint8_t actuation_point_mm;
     uint8_t release_point_mm;
+    uint8_t rapid_trigger_sensitivity;
     sensor_bounds_t matrix_sensor_bounds[MATRIX_ROWS][MATRIX_COLS];
 } kb_config_t;
 
