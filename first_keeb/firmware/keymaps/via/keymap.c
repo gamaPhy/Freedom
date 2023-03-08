@@ -21,7 +21,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 enum via_kb_config_value {
     id_kb_rapid_trigger = 1,
     id_kb_actuation_point_mm = 2,
-    id_kb_release_point_mm = 3
+    id_kb_release_point_mm = 3,
+    id_kb_rapid_trigger_sensitivity_mm = 4
 };
 
 void kb_config_set_value(uint8_t* data) {
@@ -37,6 +38,9 @@ void kb_config_set_value(uint8_t* data) {
         break;
     case id_kb_release_point_mm:
         kb_config.release_point_mm = *value_data;
+        break;
+    case id_kb_rapid_trigger_sensitivity_mm:
+        kb_config.rapid_trigger_sensitivity_mm = *value_data;
         break;
     }
 }
@@ -55,6 +59,9 @@ void kb_config_get_value(uint8_t* data) {
         break;
     case id_kb_release_point_mm:
         *value_data = kb_config.release_point_mm;
+        break;
+    case id_kb_rapid_trigger_sensitivity_mm:
+        *value_data = kb_config.rapid_trigger_sensitivity_mm;
         break;
     }
 }

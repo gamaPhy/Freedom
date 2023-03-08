@@ -30,6 +30,13 @@
                             "type": "range",
                             "options": [1, 40],
                             "content": ["id_kb_release_point_mm", 0, 3]
+                        },
+                        {
+                            "showIf": "{id_kb_rapid_trigger} == 1",
+                            "label": "Rapid trigger sensitivity",
+                            "type": "range",
+                            "options": [1, 40],
+                            "content": ["id_kb_rapid_trigger_sensitivity_mm", 0, 4]
                         }
                     ]
                 }

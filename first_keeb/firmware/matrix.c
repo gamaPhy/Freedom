@@ -33,7 +33,7 @@ bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col, bool previous_state) {
 
     if (kb_config.rapid_trigger) {
         // converts the sensitivity's unit from mm to the amount read by ADC
-        uint16_t sensitivity_delta = map(kb_config.rapid_trigger_sensitivity, 0, 40, kb_config.matrix_sensor_bounds[row][col].max, kb_config.matrix_sensor_bounds[row][col].min);
+        uint16_t sensitivity_delta = map(kb_config.rapid_trigger_sensitivity_mm, 0, 40, kb_config.matrix_sensor_bounds[row][col].max, kb_config.matrix_sensor_bounds[row][col].min);
         if (previous_state) {
             // while the key is pressed, keep track of the lowest point of the key in current_extremes.
             // if the key is raised above the lowest point by sensitivity_delta, release the key.
