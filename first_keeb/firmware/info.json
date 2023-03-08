@@ -22,18 +22,18 @@
     "matrix_pins": {
         "custom_lite": true,
         "direct": [
-            ["GP15", "GP14", "NO_PIN"],
-            ["GP26", "GP27", "GP28"]
+            ["GP26", "GP27", "GP28"],
+            ["GP15", "GP14", "NO_PIN"]
         ]
     },
     "layouts": {
         "LAYOUT": {
             "layout": [
-                {"label":"Button 1", "matrix": [0, 0], "x":0.75, "y":0, "w":0.5, "h":0.5},
-                {"label":"Button 2", "matrix": [0, 1],"x":1.75, "y":0, "w":0.5, "h":0.5},
-                {"label":"Key 1", "matrix": [1, 0], "x": 0, "y": 1},
-                {"label":"Key 2", "matrix": [1, 1], "x": 1, "y": 1},
-                {"label":"Key 2", "matrix": [1, 2], "x": 1, "y": 2}
+                {"label":"Key 1", "matrix": [0, 0], "x": 0, "y": 0},
+                {"label":"Key 2", "matrix": [0, 1], "x": 1, "y": 0},
+                {"label":"Key 3", "matrix": [0, 2], "x": 2, "y": 0},
+                {"label":"Button 1", "matrix": [1, 0], "x":0.75, "y":1, "w":0.5, "h":0.5},
+                {"label":"Button 2", "matrix": [1, 1], "x":1.75, "y":1, "w":0.5, "h":0.5}
             ]
         }
     }

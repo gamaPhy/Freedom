@@ -13,8 +13,11 @@ enum custom_keycodes {
     NEW_QK_KB
 };
 
-extern bool changing_actuation_settings;
-extern bool calibrating_sensors;
+typedef enum {
+    NO_SCAN,
+    DIGITAL,
+    ANALOG
+} pin_scan_mode_t;
 
 typedef struct {
     uint16_t min;
@@ -25,7 +28,11 @@ typedef struct {
     bool rapid_trigger;
     uint8_t actuation_point_mm;
     uint8_t release_point_mm;
-    sensor_bounds_t matrix_sensor_bounds[MATRIX_COLS];
+    uint8_t rapid_trigger_sensitivity_mm;
+    sensor_bounds_t matrix_sensor_bounds[MATRIX_ROWS][MATRIX_COLS];
 } kb_config_t;
 
 extern kb_config_t kb_config;
+extern bool calibrating_sensors;
+extern const pin_t direct_pins[MATRIX_ROWS][MATRIX_COLS];
+extern const pin_scan_mode_t pin_scan_modes[MATRIX_ROWS][MATRIX_COLS];
