@@ -6,9 +6,7 @@
 
 extern matrix_row_t raw_matrix[MATRIX_ROWS]; // raw values
 extern matrix_row_t matrix[MATRIX_ROWS];     // debounced values
-static const pin_t direct_pins[MATRIX_ROWS][MATRIX_COLS] = DIRECT_PINS;
-static const int digital_row = 0;
-uint16_t previous_sensor_values[MATRIX_COLS];
+uint16_t previous_sensor_values[MATRIX_ROWS][MATRIX_COLS];
 
 int map(int input, int input_start, int input_end, int output_start, int output_end) {
     return (input - input_start) * (output_end - output_start) / (input_end - input_start) + output_start;
@@ -18,15 +16,33 @@ void matrix_init_custom(void) {
     for (int row = 0; row < MATRIX_ROWS; row++) {
         for (int col = 0; col < MATRIX_COLS; col++) {
             pin_t pin = direct_pins[row][col];
-            if (pin != NO_PIN) {
-                if (row == digital_row) {
-                    setPinInputHigh(pin);
-                } else {
-                    palSetLineMode(pin, PAL_MODE_INPUT_ANALOG);
-                }
+            pin_scan_mode_t pin_mode = pin_scan_modes[row][col];
+            if (pin_mode == ANALOG) {
+                setPinInputHigh(pin);
+            } else if (pin_mode == DIGITAL) {
+                palSetLineMode(pin, PAL_MODE_INPUT_ANALOG);
             }
         }
     }
+}
+
+bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col, bool previous_state) {
+    uint16_t sensor_value = analogReadPin(pin);
+    uint16_t previous_value = previous_sensor_values[row][col];
+    previous_sensor_values[row][col] = sensor_value;
+    uint16_t actuation_point_adc = map(kb_config.actuation_point_mm, 0, 40, kb_config.matrix_sensor_bounds[row][col].max, kb_config.matrix_sensor_bounds[row][col].min);
+
+    if (kb_config.rapid_trigger) {
+        return sensor_value < actuation_point_adc && sensor_value < previous_value;
+    } else {
+        uint16_t release_point_adc = map(kb_config.release_point_mm, 0, 40, kb_config.matrix_sensor_bounds[row][col].max, kb_config.matrix_sensor_bounds[row][col].min);
+        if (previous_state) {
+            return sensor_value < release_point_adc;
+        } else {
+            return sensor_value < actuation_point_adc;
+        }
+    }
+
 }
 
 void matrix_read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row) {
@@ -36,42 +52,13 @@ void matrix_read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
     matrix_row_t row_shifter = 1;
     for (uint8_t col_index = 0; col_index < MATRIX_COLS; col_index++, row_shifter <<= 1) {
         pin_t pin = direct_pins[current_row][col_index];
-        if (pin == NO_PIN) {
-            continue;
-        }
-
-        if (current_row == digital_row) {
+        pin_scan_mode_t pin_mode = pin_scan_modes[current_row][col_index];
+        if (pin_mode == DIGITAL) {
             current_row_value |= readPin(pin) ? 0 : row_shifter;
-        } else {
-            uint16_t sensor_value = analogReadPin(pin);
-            uint16_t previous_value = previous_sensor_values[col_index];
-            previous_sensor_values[col_index] = sensor_value;
-
-            if (calibrating_sensors) {
-                sensor_bounds_t* bounds = &kb_config.matrix_sensor_bounds[col_index];
-                if (sensor_value < bounds->min) {
-                    bounds->min = sensor_value;
-                }
-                if (sensor_value > bounds->max) {
-                    bounds->max = sensor_value;
-                }
-            } else {
-                uint16_t actuation_point_analog = map(kb_config.actuation_point_mm, 0, 40, kb_config.matrix_sensor_bounds[col_index].max, kb_config.matrix_sensor_bounds[col_index].min);
-                if (kb_config.rapid_trigger) {
-                    if (sensor_value < actuation_point_analog) {
-                        if (sensor_value == previous_value) {
-                            // keep the current state
-                            current_row_value |= current_matrix[current_row] & row_shifter;
-                        } else {
-                            current_row_value |= sensor_value > previous_value ? row_shifter : 0;
-                        }
-                    }
-                } else {
-                    current_row_value |= sensor_value < actuation_point_analog ? row_shifter : 0;
-                }
+        } else if (pin_mode == ANALOG && !calibrating_sensors) {
+            if (scan_pin_analog(pin, current_row, col_index, current_row & row_shifter)) {
+                current_row_value |= row_shifter;
             }
-
-
         }
     }
 
