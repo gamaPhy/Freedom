@@ -2,16 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
-#define RGB_MATRIX_LED_COUNT 2
-#define RGB_DI_PIN GP13
-
 #define ADC_RESOLUTION 12
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 32
+#define DYNAMIC_KEYMAP_LAYER_COUNT 10
 
 #define EECONFIG_KB_DATA_SIZE (4 + 4 * MATRIX_ROWS * MATRIX_COLS)
-
-#define PIN_SCAN_MODES { \
-    { ANALOG,  ANALOG,  ANALOG }, \
-    { DIGITAL, DIGITAL, NO_SCAN } \
-}
