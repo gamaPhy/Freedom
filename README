@@ -1,7 +1,5 @@
-## 3D Printing
-- White PLA-plus (Curamic 3D):
-  - 220 nozzle
-  - 50 bed
-  - 60 speed (40 speed layer 1)
-  - 60% infills
-  - Suppoort
+## 3D Printing 
+| Material      | Nozzle (C) | Bed (C) | Speed (mm/s) | First Layer speed | 
+| ----------- | ----------- | -- | --| --|
+| PLA+     | 220       | 50 | 60 | 40
+| PETG   | 240        | 77 | 50 | 15
