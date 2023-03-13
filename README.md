@@ -1,9 +1,16 @@
+# Name
+
+## Tech Stack 
+
+KFC (Kicad, Freecad, C/C++)
+
+
 ## 3D Printing 
 
 Cura defaults
 
-| Material      | Nozzle (C) | Bed (C) | Speed (mm/s) | Fill pattern | 
-| ----------- | ----------- | -- | --| --|
-| PETG   | default | -| -| Gyroid | 
+| Material      | Nozzle (C) | Bed (C) | Speed (mm/s) | Support % | Fill pattern | 
+| ----------- | ----------- | -- | --| --| --|
+| PETG   | default | -| -| 2 | Gyroid | 
 
 
