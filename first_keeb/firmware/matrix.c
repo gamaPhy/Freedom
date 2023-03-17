@@ -1,8 +1,6 @@
 // Copyright 2023 Thailer lietz (@ThailerL) Theodore Lietz (@tlietz)
 // SPDX-License-Identifier: GPL-3.0-or-later
-#include "firmware.h"
-#include "matrix.h"
-#include "analog.h"
+#include QMK_KEYBOARD_H
 
 extern matrix_row_t raw_matrix[MATRIX_ROWS]; // raw values
 extern matrix_row_t matrix[MATRIX_ROWS];     // debounced values

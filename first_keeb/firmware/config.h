@@ -6,4 +6,5 @@
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 10
 
+// corresponds to size of kb_config_t
 #define EECONFIG_KB_DATA_SIZE (4 + 4 * MATRIX_ROWS * MATRIX_COLS)
