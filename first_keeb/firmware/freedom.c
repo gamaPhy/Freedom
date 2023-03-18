@@ -6,6 +6,7 @@ bool calibrating_sensors = false;
 kb_config_t kb_config;
 const pin_t direct_pins[MATRIX_ROWS][MATRIX_COLS] = DIRECT_PINS;
 const pin_scan_mode_t pin_scan_modes[MATRIX_ROWS][MATRIX_COLS] = PIN_SCAN_MODES;
+uint16_t min1, max1, min2, max2, min3, max3;
 
 void eeconfig_init_kb(void) {
     kb_config.rapid_trigger = false;
@@ -15,7 +16,7 @@ void eeconfig_init_kb(void) {
     for (int row = 0; row < MATRIX_ROWS; row++) {
         for (int col = 0; col < MATRIX_COLS; col++) {
             if (pin_scan_modes[row][col] == ANALOG) {
-                kb_config.matrix_sensor_bounds[row][col].min = 0;
+                kb_config.matrix_sensor_bounds[row][col].min = 2200;
                 kb_config.matrix_sensor_bounds[row][col].max = 3000;
             }
         }
@@ -24,10 +25,12 @@ void eeconfig_init_kb(void) {
 }
 
 void keyboard_post_init_kb(void) {
+    debug_enable = true;
     eeconfig_read_kb_datablock(&kb_config);
 }
 
 bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
+    rgblight_setrgb_range(0, 0, 0, 0, 2);
     if (!process_record_user(keycode, record)) {
         return false;
     }
@@ -74,6 +77,19 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
 }
 
 void matrix_scan_kb(void) {
+    static uint16_t key_timer;
+    if (timer_elapsed(key_timer) > 1000) {
+        key_timer = timer_read();
+        dprintf("(%i, %i) (%i, %i) (%i, %i)\n", min1, max1, min2, max2, min3, max3);
+        min1 = -1;
+        max1 = 0;
+        min2 = -1;
+        max2 = 0;
+        min3 = -1;
+        max3 = 0;
+    }
+
+
     if (calibrating_sensors) {
         for (int row = 0; row < MATRIX_ROWS; row++) {
             for (int col = 0; col < MATRIX_COLS; col++) {

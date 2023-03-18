@@ -4,7 +4,15 @@
     "build": {
         "debounce_type": "sym_eager_pk",
         "firmware_format": "uf2",
-        "lto": true
+        "lto": true,
+    },
+    "features": {
+        "mousekey": true,
+        "rgblight": true
+    },
+    "rgblight": {
+        "pin": "GP15",
+        "led_count": 10
     },
     "processor": "RP2040",
     "bootloader": "rp2040",
