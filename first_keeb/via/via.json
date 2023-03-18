@@ -6,7 +6,11 @@
         "rows": 2,
         "cols": 3
     },
+    "keycodes": [
+        "qmk_lighting"
+    ],
     "menus": [
+        "qmk_rgblight",
         {
             "label": "Actuation settings",
             "content": [

@@ -38,3 +38,4 @@ extern const pin_t direct_pins[MATRIX_ROWS][MATRIX_COLS];
 extern const pin_scan_mode_t pin_scan_modes[MATRIX_ROWS][MATRIX_COLS];
 
 _Static_assert(sizeof(kb_config_t) <= EECONFIG_KB_DATA_SIZE, "EECONFIG_KB_DATA_SIZE is too small to store keyboard configuration.");
+

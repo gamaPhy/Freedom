@@ -1,13 +1,18 @@
 {
-    "manufacturer": "T&T",
-    "maintainer": "ThailerL, tlietz",
+    "manufacturer": "mag keys",
+    "maintainer": "ThailerL",
     "build": {
         "debounce_type": "sym_eager_pk",
         "firmware_format": "uf2",
-        "lto": true
+        "lto": true,
     },
     "features": {
-        "console": true
+        "mousekey": true,
+        "rgblight": true
+    },
+    "rgblight": {
+        "pin": "GP15",
+        "led_count": 10
     },
     "processor": "RP2040",
     "bootloader": "rp2040",

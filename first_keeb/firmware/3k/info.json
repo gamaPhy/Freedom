@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "3a2d",
+    "keyboard_name": "3k",
     "url": "",
     "usb": {
         "device_version": "0.0.1",
@@ -10,7 +10,7 @@
         "custom_lite": true,
         "direct": [
             ["GP26", "GP27", "GP28"],
-            ["GP15", "GP14", "NO_PIN"]
+            ["GP18", "GP19", "NO_PIN"]
         ]
     },
     "layouts": {
