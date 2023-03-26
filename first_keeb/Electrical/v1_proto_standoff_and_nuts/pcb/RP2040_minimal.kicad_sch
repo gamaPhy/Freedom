@@ -3917,7 +3917,7 @@
   (symbol (lib_id "power:GND") (at 160.02 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00407212-edcd-4cb0-ba03-6db987df47fe)
-    (property "Reference" "#PWR026" (at 160.02 119.38 0)
+    (property "Reference" "#PWR027" (at 160.02 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 160.147 117.4242 0)
@@ -3933,7 +3933,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
     )
@@ -3998,7 +3998,7 @@
     (property "Reference" "Y1" (at 220.98 119.38 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "16MHz" (at 219.075 119.38 0)
+    (property "Value" "8MHz" (at 219.075 119.38 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" (at 222.25 125.095 0)
@@ -4229,7 +4229,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 282.575 218.44 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0e8b1705-19cd-4316-aaa4-9c6cc0e09c2e)
-    (property "Reference" "#PWR047" (at 282.575 224.79 0)
+    (property "Reference" "#PWR056" (at 282.575 224.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 282.575 222.885 0)
@@ -4245,7 +4245,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR047") (unit 1)
+          (reference "#PWR056") (unit 1)
         )
       )
       (project "first_keeb"
@@ -4259,7 +4259,7 @@
   (symbol (lib_id "power:+4V4") (at 261.62 164.465 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0e9c8142-e8d2-4a17-b150-d36feffa3a5f)
-    (property "Reference" "#PWR38" (at 261.62 168.275 0)
+    (property "Reference" "#PWR37" (at 261.62 168.275 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+4V4" (at 261.62 160.655 0)
@@ -4275,7 +4275,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR38") (unit 1)
+          (reference "#PWR37") (unit 1)
         )
       )
     )
@@ -4284,7 +4284,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 140.335 270.51 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1161ef23-9394-4bcd-ba22-45527b89dd1e)
-    (property "Reference" "#PWR076" (at 140.335 276.86 0)
+    (property "Reference" "#PWR083" (at 140.335 276.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 140.335 274.955 0)
@@ -4300,7 +4300,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR076") (unit 1)
+          (reference "#PWR083") (unit 1)
         )
       )
       (project "first_keeb"
@@ -4314,7 +4314,7 @@
   (symbol (lib_id "MCU_ST_STM32F4:STM32F401RCTx") (at 73.66 112.395 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 126c7ce0-db45-44f8-af54-fa5e141d11fe)
-    (property "Reference" "U4" (at 78.74 158.75 0)
+    (property "Reference" "U5" (at 78.74 158.75 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "STM32F401RCTx" (at 78.1559 161.29 0)
@@ -4393,7 +4393,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "U4") (unit 1)
+          (reference "U5") (unit 1)
         )
       )
     )
@@ -4480,7 +4480,7 @@
   (symbol (lib_id "power:+5V") (at 251.46 251.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 156ba8a9-74ce-4a0c-bae8-2d012eb40f66)
-    (property "Reference" "#PWR081" (at 251.46 255.27 0)
+    (property "Reference" "#PWR075" (at 251.46 255.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 251.46 247.65 0)
@@ -4496,7 +4496,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR081") (unit 1)
+          (reference "#PWR075") (unit 1)
         )
       )
     )
@@ -4555,7 +4555,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 65.405 227.965 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 19320f1b-3e98-467b-a53b-a33944d1fca0)
-    (property "Reference" "#PWR074" (at 65.405 234.315 0)
+    (property "Reference" "#PWR060" (at 65.405 234.315 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 65.405 233.045 0)
@@ -4571,7 +4571,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR074") (unit 1)
+          (reference "#PWR060") (unit 1)
         )
       )
       (project "first_keeb"
@@ -4662,7 +4662,7 @@
   (symbol (lib_id "power:GND") (at 323.215 179.705 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1ee8c303-e78f-452f-b170-b2311235ffad)
-    (property "Reference" "#PWR053" (at 323.215 186.055 0)
+    (property "Reference" "#PWR041" (at 323.215 186.055 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 323.342 184.0992 0)
@@ -4678,7 +4678,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR053") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
     )
@@ -4687,7 +4687,7 @@
   (symbol (lib_id "power:+5V") (at 168.91 251.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1fa7b21d-9bdf-467a-9ad0-687d8000551d)
-    (property "Reference" "#PWR069" (at 168.91 255.27 0)
+    (property "Reference" "#PWR072" (at 168.91 255.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 168.91 247.65 0)
@@ -4703,7 +4703,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR069") (unit 1)
+          (reference "#PWR072") (unit 1)
         )
       )
     )
@@ -4738,7 +4738,7 @@
   (symbol (lib_id "power:+5V") (at 239.395 214.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2408ffad-cfa8-4903-b4c9-15335640c118)
-    (property "Reference" "#PWR042" (at 239.395 218.44 0)
+    (property "Reference" "#PWR048" (at 239.395 218.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 239.395 210.82 0)
@@ -4754,7 +4754,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR042") (unit 1)
+          (reference "#PWR048") (unit 1)
         )
       )
     )
@@ -4788,7 +4788,7 @@
   (symbol (lib_id "Device:R_Small") (at 228.6 118.11 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 25066dac-1201-4798-8895-023b7f5a1695)
-    (property "Reference" "R8" (at 230.505 116.84 0)
+    (property "Reference" "R5" (at 230.505 116.84 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "47" (at 230.505 119.38 0)
@@ -4808,7 +4808,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "R8") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
       (project "STM32F4_REV2"
@@ -4848,7 +4848,7 @@
   (symbol (lib_id "power:VDD") (at 174.625 92.71 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 28016223-0697-4757-809e-ea1a25121e32)
-    (property "Reference" "#PWR025" (at 174.625 96.52 0)
+    (property "Reference" "#PWR026" (at 174.625 96.52 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 174.625 88.9 0)
@@ -4864,7 +4864,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -4873,7 +4873,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 374.65 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 28b89e57-e9e7-44a4-8716-ee839385727d)
-    (property "Reference" "#PWR067" (at 374.65 240.03 0)
+    (property "Reference" "#PWR068" (at 374.65 240.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 374.65 238.125 0)
@@ -4889,7 +4889,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR067") (unit 1)
+          (reference "#PWR068") (unit 1)
         )
       )
       (project "first_keeb"
@@ -4903,7 +4903,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 237.49 255.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 29c38f4e-28db-4097-bd1f-e5bf1a9ce6d0)
-    (property "Reference" "#PWR083" (at 237.49 261.62 0)
+    (property "Reference" "#PWR080" (at 237.49 261.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 237.49 259.715 0)
@@ -4919,7 +4919,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR083") (unit 1)
+          (reference "#PWR080") (unit 1)
         )
       )
       (project "first_keeb"
@@ -4933,7 +4933,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 64.77 243.205 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2c6ae445-03af-41b7-b0c1-8c1171137d2f)
-    (property "Reference" "#PWR079" (at 64.77 249.555 0)
+    (property "Reference" "#PWR070" (at 64.77 249.555 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 64.77 248.285 0)
@@ -4949,7 +4949,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR079") (unit 1)
+          (reference "#PWR070") (unit 1)
         )
       )
       (project "first_keeb"
@@ -4963,7 +4963,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 183.515 255.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2f7ed964-d952-42fa-8ccf-d435b56207f9)
-    (property "Reference" "#PWR072" (at 183.515 261.62 0)
+    (property "Reference" "#PWR078" (at 183.515 261.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 183.515 259.715 0)
@@ -4979,7 +4979,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR072") (unit 1)
+          (reference "#PWR078") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5047,7 +5047,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 254 218.44 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 35b471ac-b58d-42b8-922a-0852483680a6)
-    (property "Reference" "#PWR046" (at 254 224.79 0)
+    (property "Reference" "#PWR055" (at 254 224.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 254 222.885 0)
@@ -5063,7 +5063,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR046") (unit 1)
+          (reference "#PWR055") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5164,7 +5164,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 211.455 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3c6ac6ca-9353-4d53-86a3-81de9af2ff68)
-    (property "Reference" "#PWR061" (at 211.455 240.03 0)
+    (property "Reference" "#PWR063" (at 211.455 240.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 211.455 238.125 0)
@@ -5180,7 +5180,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR061") (unit 1)
+          (reference "#PWR063") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5194,7 +5194,7 @@
   (symbol (lib_id "power:+4V4") (at 383.54 89.535 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3cadaaf6-b6d9-47d6-99e6-0068dfc3a460)
-    (property "Reference" "#PWR27" (at 383.54 93.345 0)
+    (property "Reference" "#PWR25" (at 383.54 93.345 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+4V4" (at 383.54 85.725 0)
@@ -5210,7 +5210,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR27") (unit 1)
+          (reference "#PWR25") (unit 1)
         )
       )
     )
@@ -5328,7 +5328,7 @@
   (symbol (lib_id "power:+5V") (at 278.13 251.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 483655cf-0650-4085-a145-99804536256b)
-    (property "Reference" "#PWR082" (at 278.13 255.27 0)
+    (property "Reference" "#PWR076" (at 278.13 255.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 278.13 247.65 0)
@@ -5344,7 +5344,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR082") (unit 1)
+          (reference "#PWR076") (unit 1)
         )
       )
     )
@@ -5353,7 +5353,7 @@
   (symbol (lib_id "power:+5V") (at 184.15 214.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4939b0bf-4d4c-469a-9528-96acb0d777b2)
-    (property "Reference" "#PWR040" (at 184.15 218.44 0)
+    (property "Reference" "#PWR046" (at 184.15 218.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 184.15 210.82 0)
@@ -5369,7 +5369,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR040") (unit 1)
+          (reference "#PWR046") (unit 1)
         )
       )
     )
@@ -5412,7 +5412,7 @@
   (symbol (lib_id "Switch:SW_Push") (at 59.69 243.205 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4ae140a7-d008-423b-88f1-bd199962e008)
-    (property "Reference" "SW5" (at 59.69 236.855 0)
+    (property "Reference" "SW8" (at 59.69 236.855 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "BUTT2" (at 59.69 239.395 0)
@@ -5429,7 +5429,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW5") (unit 1)
+          (reference "SW8") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5469,7 +5469,7 @@
   (symbol (lib_id "power:GND") (at 254.635 179.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4d19c931-2a7f-4442-bf2a-311fcbf3d621)
-    (property "Reference" "#PWR051" (at 254.635 185.42 0)
+    (property "Reference" "#PWR039" (at 254.635 185.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 254.762 183.4642 0)
@@ -5485,7 +5485,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR051") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
     )
@@ -5522,7 +5522,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 160.02 234.315 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 50cfc712-3322-412d-805f-683434691a6b)
-    (property "Reference" "#PWR064" (at 160.02 240.665 0)
+    (property "Reference" "#PWR069" (at 160.02 240.665 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 160.02 238.76 0)
@@ -5538,7 +5538,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR064") (unit 1)
+          (reference "#PWR069") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5658,7 +5658,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 239.395 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 548201df-a230-4537-9fa3-e833c8860707)
-    (property "Reference" "#PWR062" (at 239.395 240.03 0)
+    (property "Reference" "#PWR064" (at 239.395 240.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 239.395 238.125 0)
@@ -5674,7 +5674,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR062") (unit 1)
+          (reference "#PWR064") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5739,7 +5739,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 154.94 255.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 57d66b7a-3a14-457c-a3fe-bfbc7e454de6)
-    (property "Reference" "#PWR071" (at 154.94 261.62 0)
+    (property "Reference" "#PWR077" (at 154.94 261.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 154.94 259.715 0)
@@ -5755,7 +5755,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR071") (unit 1)
+          (reference "#PWR077") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5769,7 +5769,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 195.58 270.51 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 59a44523-38ff-4f9d-a4de-f891658cb472)
-    (property "Reference" "#PWR078" (at 195.58 276.86 0)
+    (property "Reference" "#PWR085" (at 195.58 276.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 195.58 274.955 0)
@@ -5785,7 +5785,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR078") (unit 1)
+          (reference "#PWR085") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5911,7 +5911,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 292.735 255.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6791432e-dba0-488d-93f3-505a7f339187)
-    (property "Reference" "#PWR085" (at 292.735 261.62 0)
+    (property "Reference" "#PWR082" (at 292.735 261.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 292.735 259.715 0)
@@ -5927,7 +5927,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR085") (unit 1)
+          (reference "#PWR082") (unit 1)
         )
       )
       (project "first_keeb"
@@ -5941,7 +5941,7 @@
   (symbol (lib_id "power:GND") (at 287.655 179.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 698e8236-a70d-4826-8ef5-6983e5a67fe7)
-    (property "Reference" "#PWR052" (at 287.655 185.42 0)
+    (property "Reference" "#PWR040" (at 287.655 185.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 287.782 183.4642 0)
@@ -5957,7 +5957,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR052") (unit 1)
+          (reference "#PWR040") (unit 1)
         )
       )
     )
@@ -6021,7 +6021,7 @@
   (symbol (lib_id "power:GND") (at 307.34 180.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6cd709a4-58c8-4043-898c-32250a37b2ac)
-    (property "Reference" "#PWR056" (at 307.34 186.69 0)
+    (property "Reference" "#PWR044" (at 307.34 186.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 307.467 184.7342 0)
@@ -6037,7 +6037,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR056") (unit 1)
+          (reference "#PWR044") (unit 1)
         )
       )
     )
@@ -6176,7 +6176,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 319.405 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 75fd1503-8651-44b3-a4c5-a3a62007de9b)
-    (property "Reference" "#PWR065" (at 319.405 240.03 0)
+    (property "Reference" "#PWR066" (at 319.405 240.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 319.405 238.125 0)
@@ -6192,7 +6192,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR065") (unit 1)
+          (reference "#PWR066") (unit 1)
         )
       )
       (project "first_keeb"
@@ -6203,10 +6203,44 @@
     )
   )
 
+  (symbol (lib_id "Device:C_Small") (at 41.275 70.485 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 773a3a28-7805-4669-8aeb-fa4329199c12)
+    (property "Reference" "C13" (at 43.815 69.215 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "100n" (at 43.815 71.755 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 41.275 70.485 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 41.275 70.485 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC Part #" "C1525" (at 41.275 70.485 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid f966eec4-b752-4616-95a4-25aff2fe1828))
+    (pin "2" (uuid 70809044-c2e6-41dd-bd27-ce6861315719))
+    (instances
+      (project "RP2040_minimal"
+        (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
+          (reference "C13") (unit 1)
+        )
+      )
+      (project "STM32F4_REV2"
+        (path "/6ea106a1-bff5-4b72-bf63-92640b003eed"
+          (reference "C7") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 184.15 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7c2a7e9f-055e-4b92-9819-7baecf95519e)
-    (property "Reference" "#PWR060" (at 184.15 240.03 0)
+    (property "Reference" "#PWR062" (at 184.15 240.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 184.15 238.125 0)
@@ -6222,7 +6256,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR060") (unit 1)
+          (reference "#PWR062") (unit 1)
         )
       )
       (project "first_keeb"
@@ -6266,7 +6300,7 @@
   (symbol (lib_id "Switch:SW_DPDT_x2") (at 307.34 136.525 0) (unit 2)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 817ae0ca-c830-4381-a259-c1f9e017e4d6)
-    (property "Reference" "SW8" (at 307.34 130.175 0)
+    (property "Reference" "SW4" (at 307.34 130.175 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MS-22C01-G010" (at 307.34 132.08 0)
@@ -6287,7 +6321,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW8") (unit 2)
+          (reference "SW4") (unit 2)
         )
       )
     )
@@ -6412,7 +6446,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 266.065 255.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 86bf26fd-dcba-47fd-8c8a-766e878be5d1)
-    (property "Reference" "#PWR084" (at 266.065 261.62 0)
+    (property "Reference" "#PWR081" (at 266.065 261.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 266.065 259.715 0)
@@ -6428,7 +6462,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR084") (unit 1)
+          (reference "#PWR081") (unit 1)
         )
       )
       (project "first_keeb"
@@ -6534,7 +6568,7 @@
   (symbol (lib_id "Amplifier_Operational:MCP6001-OT") (at 369.57 110.49 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 902bdfdb-41a9-45f8-8f1e-ee44ceaa051b)
-    (property "Reference" "U5" (at 382.905 104.14 0)
+    (property "Reference" "U4" (at 382.905 104.14 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MCP6001-OT" (at 382.905 106.68 0)
@@ -6554,7 +6588,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "U5") (unit 1)
+          (reference "U4") (unit 1)
         )
       )
     )
@@ -6613,7 +6647,7 @@
   (symbol (lib_id "power:+5V") (at 160.02 205.74 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9291a65a-1f20-4908-9c03-233d369c78e2)
-    (property "Reference" "#PWR036" (at 160.02 209.55 0)
+    (property "Reference" "#PWR045" (at 160.02 209.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 160.02 201.93 0)
@@ -6629,7 +6663,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR036") (unit 1)
+          (reference "#PWR045") (unit 1)
         )
       )
     )
@@ -6638,7 +6672,7 @@
   (symbol (lib_id "power:+5V") (at 195.58 251.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 92ba823d-5693-4277-8021-0f68e564f92a)
-    (property "Reference" "#PWR070" (at 195.58 255.27 0)
+    (property "Reference" "#PWR073" (at 195.58 255.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 195.58 247.65 0)
@@ -6654,7 +6688,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR070") (unit 1)
+          (reference "#PWR073") (unit 1)
         )
       )
     )
@@ -6663,7 +6697,7 @@
   (symbol (lib_id "power:+5V") (at 140.335 251.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 935492c4-b113-4e2e-8616-36653e559518)
-    (property "Reference" "#PWR068" (at 140.335 255.27 0)
+    (property "Reference" "#PWR071" (at 140.335 255.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 140.335 247.65 0)
@@ -6679,7 +6713,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR068") (unit 1)
+          (reference "#PWR071") (unit 1)
         )
       )
     )
@@ -6744,7 +6778,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 347.98 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 952732ff-ce5f-46e0-8778-cb28120b04fa)
-    (property "Reference" "#PWR066" (at 347.98 240.03 0)
+    (property "Reference" "#PWR067" (at 347.98 240.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 347.98 238.125 0)
@@ -6760,7 +6794,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR066") (unit 1)
+          (reference "#PWR067") (unit 1)
         )
       )
       (project "first_keeb"
@@ -6863,7 +6897,7 @@
     (property "Reference" "U9" (at 336.55 167.64 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "~" (at 332.74 178.435 0)
+    (property "Value" "SLSS49E" (at 332.74 180.34 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Package_TO_SOT_SMD:SOT-23" (at 332.74 178.435 0)
@@ -6940,7 +6974,7 @@
   (symbol (lib_id "Device:R_Small") (at 155.575 110.49 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a43b1576-37c6-436e-95de-fe5bc8c917ce)
-    (property "Reference" "R5" (at 155.575 108.585 90)
+    (property "Reference" "R4" (at 155.575 108.585 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 155.575 112.395 90)
@@ -6960,7 +6994,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "R5") (unit 1)
+          (reference "R4") (unit 1)
         )
       )
       (project "STM32F4_REV2"
@@ -7089,7 +7123,7 @@
   (symbol (lib_id "power:+5V") (at 211.455 214.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a86c93b3-5d14-4369-ad33-3f9bd8b65757)
-    (property "Reference" "#PWR041" (at 211.455 218.44 0)
+    (property "Reference" "#PWR047" (at 211.455 218.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 211.455 210.82 0)
@@ -7105,7 +7139,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR041") (unit 1)
+          (reference "#PWR047") (unit 1)
         )
       )
     )
@@ -7222,7 +7256,7 @@
   (symbol (lib_id "Switch:SW_DPDT_x2") (at 307.34 123.825 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b5343e85-81da-4fd8-9869-90be3ec75d26)
-    (property "Reference" "SW8" (at 307.34 116.84 0)
+    (property "Reference" "SW4" (at 307.34 116.84 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MS-22C01-G010" (at 307.34 118.745 0)
@@ -7243,7 +7277,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW8") (unit 1)
+          (reference "SW4") (unit 1)
         )
       )
     )
@@ -7278,7 +7312,7 @@
   (symbol (lib_id "Switch:SW_Push") (at 83.82 228.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b90ea314-36e4-463f-9b17-c6f12a7c8a21)
-    (property "Reference" "SW4" (at 83.82 221.615 0)
+    (property "Reference" "SW7" (at 83.82 221.615 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "BUTT3" (at 83.82 224.155 0)
@@ -7295,7 +7329,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW4") (unit 1)
+          (reference "SW7") (unit 1)
         )
       )
       (project "first_keeb"
@@ -7309,7 +7343,7 @@
   (symbol (lib_id "power:+5V") (at 267.97 214.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bb6f4ea0-c361-495c-8528-51c499564d42)
-    (property "Reference" "#PWR043" (at 267.97 218.44 0)
+    (property "Reference" "#PWR049" (at 267.97 218.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 267.97 210.82 0)
@@ -7325,7 +7359,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR043") (unit 1)
+          (reference "#PWR049") (unit 1)
         )
       )
     )
@@ -7334,7 +7368,7 @@
   (symbol (lib_id "power:GND") (at 342.9 179.705 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bca00097-f9c7-41a9-81cd-0b76aed7ba7a)
-    (property "Reference" "#PWR054" (at 342.9 186.055 0)
+    (property "Reference" "#PWR042" (at 342.9 186.055 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 343.027 184.0992 0)
@@ -7350,7 +7384,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR054") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
     )
@@ -7362,7 +7396,7 @@
     (property "Reference" "U8" (at 300.99 167.64 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "~" (at 297.18 178.435 0)
+    (property "Value" "SLSS49E" (at 297.18 180.34 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Package_TO_SOT_SMD:SOT-23" (at 297.18 178.435 0)
@@ -7386,7 +7420,7 @@
   (symbol (lib_id "Switch:SW_DPDT_x2") (at 308.61 107.95 0) (unit 2)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bfd4619e-21f8-423f-945d-6c844ebbfb86)
-    (property "Reference" "SW6" (at 308.61 101.6 0)
+    (property "Reference" "SW2" (at 308.61 101.6 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MS-22C01-G010" (at 308.61 103.505 0)
@@ -7398,16 +7432,16 @@
     (property "Datasheet" "~" (at 308.61 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid a40f02fe-9414-4951-a9c0-e9508192321c))
-    (pin "2" (uuid 18bcedc7-5409-4a65-83ef-a01de1d22bf1))
-    (pin "3" (uuid dcc86b75-aba7-416e-850a-bfa4e71dc108))
+    (pin "1" (uuid a40f02fe-9414-4951-a9c0-e9508192321d))
+    (pin "2" (uuid 18bcedc7-5409-4a65-83ef-a01de1d22bf2))
+    (pin "3" (uuid dcc86b75-aba7-416e-850a-bfa4e71dc109))
     (pin "4" (uuid 9a17952f-3979-46cb-8006-b7a8024ed551))
     (pin "5" (uuid 726c7aac-2a7f-48f0-8e9c-7200c2484f6e))
     (pin "6" (uuid fe877776-8478-4903-bf26-2a3a1c9b5b39))
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW6") (unit 2)
+          (reference "SW2") (unit 2)
         )
       )
     )
@@ -7441,7 +7475,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 210.185 255.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c55de4bc-2980-462f-8b1b-8e01ecc9e52e)
-    (property "Reference" "#PWR073" (at 210.185 261.62 0)
+    (property "Reference" "#PWR079" (at 210.185 261.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 210.185 259.715 0)
@@ -7457,7 +7491,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR073") (unit 1)
+          (reference "#PWR079") (unit 1)
         )
       )
       (project "first_keeb"
@@ -7471,7 +7505,7 @@
   (symbol (lib_id "power:GND") (at 366.395 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c6c9122d-27e4-48a0-a588-07818fea500d)
-    (property "Reference" "#PWR035" (at 366.395 170.18 0)
+    (property "Reference" "#PWR036" (at 366.395 170.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 366.522 168.2242 0)
@@ -7487,7 +7521,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR035") (unit 1)
+          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -7518,44 +7552,10 @@
     )
   )
 
-  (symbol (lib_id "Device:C_Small") (at 41.275 70.485 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid c811b2ad-4426-481d-981b-c1abb0156e9b)
-    (property "Reference" "C13" (at 43.815 69.215 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "100n" (at 43.815 71.755 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 41.275 70.485 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 41.275 70.485 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "LCSC Part #" "C19666" (at 41.275 70.485 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 634b1afd-b6ed-4a23-9aab-f629925450a7))
-    (pin "2" (uuid 7882363b-c0f1-4a55-9b02-df4081fe227e))
-    (instances
-      (project "RP2040_minimal"
-        (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "C13") (unit 1)
-        )
-      )
-      (project "STM32F4_REV2"
-        (path "/6ea106a1-bff5-4b72-bf63-92640b003eed"
-          (reference "C5") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "power:GND") (at 273.685 180.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c8519279-3efd-4dc6-877f-fe255ed31a9e)
-    (property "Reference" "#PWR055" (at 273.685 186.69 0)
+    (property "Reference" "#PWR043" (at 273.685 186.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 273.812 184.7342 0)
@@ -7571,7 +7571,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR055") (unit 1)
+          (reference "#PWR043") (unit 1)
         )
       )
     )
@@ -7609,7 +7609,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 226.06 218.44 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cfdad7b2-d9d2-478c-902d-339a21459bfb)
-    (property "Reference" "#PWR045" (at 226.06 224.79 0)
+    (property "Reference" "#PWR054" (at 226.06 224.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 226.06 222.885 0)
@@ -7625,7 +7625,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR054") (unit 1)
         )
       )
       (project "first_keeb"
@@ -7785,7 +7785,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 267.97 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dc620575-26a7-4c22-af69-71f50dbfa5ef)
-    (property "Reference" "#PWR063" (at 267.97 240.03 0)
+    (property "Reference" "#PWR065" (at 267.97 240.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 267.97 238.125 0)
@@ -7801,7 +7801,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR063") (unit 1)
+          (reference "#PWR065") (unit 1)
         )
       )
       (project "first_keeb"
@@ -7815,7 +7815,7 @@
   (symbol (lib_id "Switch:SW_Push") (at 60.325 227.965 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dc7523c8-8a8b-47e3-b3ff-c4b660f29763)
-    (property "Reference" "SW3" (at 60.325 220.98 0)
+    (property "Reference" "SW6" (at 60.325 220.98 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "BUTT1" (at 60.325 223.52 0)
@@ -7832,7 +7832,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW3") (unit 1)
+          (reference "SW6") (unit 1)
         )
       )
       (project "first_keeb"
@@ -7846,7 +7846,7 @@
   (symbol (lib_id "Switch:SW_SPDT") (at 391.16 92.075 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dd5d837b-f419-413d-a99c-5a8d4ecc1a13)
-    (property "Reference" "SW7" (at 391.16 85.09 0)
+    (property "Reference" "SW1" (at 391.16 85.09 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SK-3296S-01-L3" (at 394.97 87.63 0)
@@ -7864,7 +7864,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW7") (unit 1)
+          (reference "SW1") (unit 1)
         )
       )
     )
@@ -7873,7 +7873,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 168.91 270.51 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid df7d77b2-87d3-48e4-9aea-4ab1eb9d64d7)
-    (property "Reference" "#PWR077" (at 168.91 276.86 0)
+    (property "Reference" "#PWR084" (at 168.91 276.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 168.91 274.955 0)
@@ -7889,7 +7889,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR077") (unit 1)
+          (reference "#PWR084") (unit 1)
         )
       )
       (project "first_keeb"
@@ -7903,7 +7903,7 @@
   (symbol (lib_id "power:+5V") (at 319.405 214.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dfab66f8-a010-4f56-ba21-9817ea527c65)
-    (property "Reference" "#PWR048" (at 319.405 218.44 0)
+    (property "Reference" "#PWR050" (at 319.405 218.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 319.405 210.82 0)
@@ -7919,7 +7919,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR048") (unit 1)
+          (reference "#PWR050") (unit 1)
         )
       )
     )
@@ -7962,7 +7962,7 @@
   (symbol (lib_id "Switch:SW_Push") (at 163.83 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e2e47dc6-18ec-4ac1-86b8-b106186eb427)
-    (property "Reference" "SW2" (at 163.83 122.555 0)
+    (property "Reference" "SW5" (at 163.83 122.555 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SKRKAHE020" (at 163.83 125.095 0)
@@ -7979,7 +7979,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW2") (unit 1)
+          (reference "SW5") (unit 1)
         )
       )
     )
@@ -7988,7 +7988,7 @@
   (symbol (lib_id "power:+4V4") (at 294.64 163.195 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e3e661f8-7004-4583-9a2f-a37bffccc341)
-    (property "Reference" "#PWR37" (at 294.64 167.005 0)
+    (property "Reference" "#PWR34" (at 294.64 167.005 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+4V4" (at 294.64 159.385 0)
@@ -8004,7 +8004,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR37") (unit 1)
+          (reference "#PWR34") (unit 1)
         )
       )
     )
@@ -8047,7 +8047,7 @@
   (symbol (lib_id "Switch:SW_DPDT_x2") (at 308.61 95.25 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e606db1b-1bd1-4393-8c4d-a04c9895ccc3)
-    (property "Reference" "SW6" (at 308.61 88.265 0)
+    (property "Reference" "SW2" (at 308.61 88.265 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MS-22C01-G010" (at 308.61 90.17 0)
@@ -8062,13 +8062,13 @@
     (pin "1" (uuid d0532045-a6ad-4cb6-8d7b-d444e31f2bc7))
     (pin "2" (uuid 44ea2729-747a-4924-bba8-9b4710d7e012))
     (pin "3" (uuid 70ced822-54cc-4bad-86cc-398b611291c4))
-    (pin "4" (uuid 132cf2d0-2666-4670-93dc-a57d81bd3cdb))
-    (pin "5" (uuid d53fb85c-8090-403c-a5b8-fc7286b9c15c))
-    (pin "6" (uuid 511e8a26-862a-424d-9001-a47a3d6ac215))
+    (pin "4" (uuid 132cf2d0-2666-4670-93dc-a57d81bd3cdc))
+    (pin "5" (uuid d53fb85c-8090-403c-a5b8-fc7286b9c15d))
+    (pin "6" (uuid 511e8a26-862a-424d-9001-a47a3d6ac216))
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW6") (unit 1)
+          (reference "SW2") (unit 1)
         )
       )
     )
@@ -8077,7 +8077,7 @@
   (symbol (lib_id "power:+4V4") (at 330.2 164.465 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e9c2695c-2978-4cce-8910-45868d5d457b)
-    (property "Reference" "#PWR39" (at 330.2 168.275 0)
+    (property "Reference" "#PWR38" (at 330.2 168.275 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+4V4" (at 330.2 160.655 0)
@@ -8093,7 +8093,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR39") (unit 1)
+          (reference "#PWR38") (unit 1)
         )
       )
     )
@@ -8102,7 +8102,7 @@
   (symbol (lib_id "Switch:SW_Push") (at 164.465 100.33 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ead9ccd1-4d9b-4cf2-a8f8-109c5782c0bd)
-    (property "Reference" "SW1" (at 164.465 93.345 0)
+    (property "Reference" "SW3" (at 164.465 93.345 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SKRKAHE020" (at 164.465 95.885 0)
@@ -8119,7 +8119,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "SW1") (unit 1)
+          (reference "SW3") (unit 1)
         )
       )
     )
@@ -8128,7 +8128,7 @@
   (symbol (lib_id "power:+5V") (at 374.65 214.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid eb21ba90-63b4-4a46-898a-284107c97e7d)
-    (property "Reference" "#PWR050" (at 374.65 218.44 0)
+    (property "Reference" "#PWR052" (at 374.65 218.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 374.65 210.82 0)
@@ -8144,7 +8144,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR050") (unit 1)
+          (reference "#PWR052") (unit 1)
         )
       )
     )
@@ -8260,7 +8260,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 88.9 228.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f4991f0a-11e3-48b6-a807-f513fb9c5df5)
-    (property "Reference" "#PWR075" (at 88.9 234.95 0)
+    (property "Reference" "#PWR061" (at 88.9 234.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 88.9 233.68 0)
@@ -8276,7 +8276,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR075") (unit 1)
+          (reference "#PWR061") (unit 1)
         )
       )
       (project "first_keeb"
@@ -8290,7 +8290,7 @@
   (symbol (lib_id "power:GND") (at 76.2 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f56bcfd9-f6a3-45ce-84a6-7a88c8f96bff)
-    (property "Reference" "#PWR034" (at 76.2 170.18 0)
+    (property "Reference" "#PWR035" (at 76.2 170.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 76.327 168.2242 0)
@@ -8306,7 +8306,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
     )
@@ -8315,7 +8315,7 @@
   (symbol (lib_id "power:+5V") (at 347.98 214.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f626ef45-2c74-4cf1-a866-287e0be70f83)
-    (property "Reference" "#PWR049" (at 347.98 218.44 0)
+    (property "Reference" "#PWR051" (at 347.98 218.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 347.98 210.82 0)
@@ -8331,7 +8331,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR049") (unit 1)
+          (reference "#PWR051") (unit 1)
         )
       )
     )
@@ -8390,7 +8390,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 198.755 218.44 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f698b2c9-b719-48c1-a1c5-1d82172dc4a3)
-    (property "Reference" "#PWR044" (at 198.755 224.79 0)
+    (property "Reference" "#PWR053" (at 198.755 224.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 198.755 222.885 0)
@@ -8406,7 +8406,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR044") (unit 1)
+          (reference "#PWR053") (unit 1)
         )
       )
       (project "first_keeb"
@@ -8449,7 +8449,7 @@
     (property "Reference" "U7" (at 266.7 167.005 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "~" (at 264.16 178.435 0)
+    (property "Value" "SLSS49E" (at 264.16 180.34 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Package_TO_SOT_SMD:SOT-23" (at 264.16 178.435 0)
@@ -8527,7 +8527,7 @@
   (symbol (lib_id "power:+5V") (at 222.885 251.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fdc072eb-7424-445a-a7a3-f1aafd9a5949)
-    (property "Reference" "#PWR080" (at 222.885 255.27 0)
+    (property "Reference" "#PWR074" (at 222.885 255.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 222.885 247.65 0)
@@ -8543,7 +8543,7 @@
     (instances
       (project "RP2040_minimal"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR080") (unit 1)
+          (reference "#PWR074") (unit 1)
         )
       )
     )
