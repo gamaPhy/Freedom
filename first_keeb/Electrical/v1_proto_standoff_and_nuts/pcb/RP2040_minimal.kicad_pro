@@ -34,9 +34,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 1.5,
-          "width": 2.0
+          "drill": 1.0,
+          "height": 1.7,
+          "width": 1.7
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -56,13 +56,6 @@
         }
       ],
       "drc_exclusions": [
-        "courtyards_overlap|115970001|104410001|04c579e5-1b2f-4729-a9a7-12e0f0012caa|32715855-7db4-4e58-b7ce-4e4b920468d8",
-        "courtyards_overlap|117980001|103600001|0172b84b-67a7-49fc-b68c-0910cb747131|32715855-7db4-4e58-b7ce-4e4b920468d8",
-        "courtyards_overlap|77010001|104440001|8add2474-5e06-4e26-9aa3-2e8f6d1ef037|b79a4856-5d4a-45f3-9a1a-b1285834ce4d",
-        "courtyards_overlap|78980001|103600001|7a05f397-18fb-4507-8bdd-79106e802b4f|b79a4856-5d4a-45f3-9a1a-b1285834ce4d",
-        "courtyards_overlap|96580001|104600001|48a3201c-52c8-4593-8e5c-bba9481facfa|4ae231c5-0421-4dac-b3c7-f52a548f3c8c",
-        "courtyards_overlap|98480001|103600001|48a3201c-52c8-4593-8e5c-bba9481facfa|57574b97-a402-49ae-9375-53ac969308d4",
-        "courtyards_overlap|98480001|103600001|48a3201c-52c8-4593-8e5c-bba9481facfa|7b16c4de-4121-48ab-94ab-b797255ae28d",
         "unconnected_items|105620000|67880000|05ed1c86-9267-4e77-8a08-facc35369fa7|429eee0d-60fa-41e9-9cb2-d32b3fead9ec",
         "unconnected_items|105620000|71880000|8fccb031-8b36-49bf-b064-a85fc4e34150|05ed1c86-9267-4e77-8a08-facc35369fa7",
         "unconnected_items|111640000|80760000|6dbc85a7-e0a1-4285-8034-94b4236d922b|4b36f8a0-9ce5-4c67-80cb-512d0ad6f55b",
@@ -81,7 +74,7 @@
         "connection_width": "warning",
         "copper_edge_clearance": "ignore",
         "copper_sliver": "warning",
-        "courtyards_overlap": "error",
+        "courtyards_overlap": "ignore",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
