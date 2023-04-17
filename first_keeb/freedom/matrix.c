@@ -5,7 +5,9 @@
 extern matrix_row_t raw_matrix[MATRIX_ROWS]; // raw values
 extern matrix_row_t matrix[MATRIX_ROWS];     // debounced values
 extern uint16_t min1, max1, min2, max2, min3, max3;
-#define MOVING_AVG_NUM 15
+#define OVERSAMPLING_USABLE_POWER 3
+#define OVERSAMPLING_OUTLIERS 3
+#define OVERSAMPLING_TOTAL_SAMPLES (1 << OVERSAMPLING_USABLE_POWER)
 
 int map(int input, int input_start, int input_end, int output_start, int output_end) {
     return (input - input_start) * (output_end - output_start) / (input_end - input_start) + output_start;
@@ -25,23 +27,38 @@ void matrix_init_custom(void) {
     }
 }
 
+void insertion_sort(uint16_t v[], int n) {
+    int i, j, x;
+    for (i = 1; i < n; i++) {
+        x = v[i];
+        j = i - 1;
+        while ((j >= 0) && (x < v[j])) {
+            v[j + 1] = v[j];
+            j--;
+        }
+        v[j + 1] = x;
+    }
+}
+
 bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col) {
     static uint16_t current_extremes[MATRIX_ROWS][MATRIX_COLS] = { 0 };
     static bool previous_states[MATRIX_ROWS][MATRIX_COLS] = { 0 };
-    static uint16_t values[MATRIX_COLS][MOVING_AVG_NUM] = { 0 };
-    static uint8_t counters[MATRIX_COLS] = { 0 };
-    counters[col]++;
+    static uint16_t samples[OVERSAMPLING_TOTAL_SAMPLES];
 
-    if (counters[col] >= MOVING_AVG_NUM) {
-        counters[col] = 0;
+    for (int i = 0; i < OVERSAMPLING_TOTAL_SAMPLES; i++) {
+        samples[i] = 4095 - analogReadPin(pin);
     }
 
-    values[col][counters[col]] = 4096 - analogReadPin(pin);
-    uint32_t sum = 0;
-    for (int i = 0; i < MOVING_AVG_NUM; i++) {
-        sum += values[col][i];
+    insertion_sort(samples, OVERSAMPLING_TOTAL_SAMPLES);
+
+    uint32_t total = 0;
+    for (int i = OVERSAMPLING_OUTLIERS; i < OVERSAMPLING_TOTAL_SAMPLES - OVERSAMPLING_OUTLIERS; i++) {
+        total += samples[i];
     }
-    uint16_t sensor_value = sum / MOVING_AVG_NUM;
+
+    uint16_t sensor_value = total >> OVERSAMPLING_USABLE_POWER;
+
+
 
     if (col == 0) {
         if (sensor_value > max1) {

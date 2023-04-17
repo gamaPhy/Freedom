@@ -94,7 +94,7 @@ void matrix_scan_kb(void) {
             for (int col = 0; col < MATRIX_COLS; col++) {
                 if (pin_scan_modes[row][col] == ANALOG) {
                     pin_t pin = direct_pins[row][col];
-                    uint16_t sensor_value = 4096 - analogReadPin(pin);
+                    uint16_t sensor_value = 4095 - analogReadPin(pin);
                     sensor_bounds_t* bounds = &kb_config.matrix_sensor_bounds[row][col];
                     if (sensor_value < bounds->min) {
                         bounds->min = sensor_value;
