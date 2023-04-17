@@ -1,12 +1,12 @@
 WS2812_DRIVER = vendor
 EEPROM_DRIVER = wear_leveling
-WEAR_LEVELING_DRIVER = rp2040_flash
-SRC += matrix.c
-SRC += analog.c
+WEAR_LEVELING_DRIVER = legacy
+
 CONSOLE_ENABLE = yes
 DEFAULT_FOLDER = magkey/freedom/3k
 
-EXTRAKEY_ENABLE = yes
-
 RGBLIGHT_DRIVER = WS2812
-WS2812_DRIVER = vendor
+WS2812_DRIVER = pwm
+
+SRC += matrix.c
+SRC += analog.c

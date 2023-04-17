@@ -30,7 +30,6 @@ void keyboard_post_init_kb(void) {
 }
 
 bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
-    rgblight_setrgb_range(0, 0, 0, 0, 2);
     if (!process_record_user(keycode, record)) {
         return false;
     }

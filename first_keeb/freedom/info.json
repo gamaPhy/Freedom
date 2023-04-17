@@ -7,14 +7,13 @@
         "lto": true,
     },
     "features": {
-        "mousekey": true,
         "rgblight": true
     },
     "rgblight": {
-        "pin": "GP15",
-        "led_count": 10
+        "pin": "C9",
+        "led_count": 8
     },
-    "processor": "RP2040",
-    "bootloader": "rp2040",
-    "board": "GENERIC_RP_RP2040"
+    "processor": "STM32F401",
+    "bootloader": "tinyuf2",
+    "board": "GENERIC_STM32_F401XC"
 }

@@ -4,5 +4,5 @@
 
 #define PIN_SCAN_MODES { \
     { ANALOG,  ANALOG,  ANALOG }, \
-    { DIGITAL, DIGITAL, NO_SCAN } \
+    { DIGITAL, DIGITAL, DIGITAL } \
 }
