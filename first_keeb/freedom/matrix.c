@@ -36,7 +36,7 @@ bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col) {
         counters[col] = 0;
     }
 
-    values[col][counters[col]] = analogReadPin(pin);
+    values[col][counters[col]] = 4096 - analogReadPin(pin);
     uint32_t sum = 0;
     for (int i = 0; i < MOVING_AVG_NUM; i++) {
         sum += values[col][i];
@@ -68,7 +68,7 @@ bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col) {
         }
     }
 
-    uint16_t actuation_point_adc = map(kb_config.actuation_point_mm, 40, 0, kb_config.matrix_sensor_bounds[row][col].min, kb_config.matrix_sensor_bounds[row][col].max);
+    uint16_t actuation_point_adc = map(kb_config.actuation_point_mm, 0, 40, kb_config.matrix_sensor_bounds[row][col].min, kb_config.matrix_sensor_bounds[row][col].max);
 
     if (kb_config.rapid_trigger) {
         // converts the sensitivity's unit from mm to the amount read by ADC
