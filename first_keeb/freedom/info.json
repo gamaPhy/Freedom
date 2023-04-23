@@ -3,7 +3,7 @@
     "maintainer": "ThailerL",
     "build": {
         "debounce_type": "sym_eager_pk",
-        "firmware_format": "uf2",
+        "firmware_format": "bin",
         "lto": true,
     },
     "features": {
@@ -11,9 +11,9 @@
     },
     "rgblight": {
         "pin": "C9",
-        "led_count": 8
+        "led_count": 1
     },
     "processor": "STM32F401",
-    "bootloader": "tinyuf2",
+    "bootloader": "stm32-dfu",
     "board": "GENERIC_STM32_F401XC"
 }

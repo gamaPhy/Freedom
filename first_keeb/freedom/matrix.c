@@ -4,7 +4,7 @@
 
 extern matrix_row_t raw_matrix[MATRIX_ROWS]; // raw values
 extern matrix_row_t matrix[MATRIX_ROWS];     // debounced values
-extern uint16_t min1, max1, min2, max2, min3, max3;
+extern uint16_t     min1, max1, min2, max2, min3, max3;
 #define OVERSAMPLING_USABLE_POWER 3
 #define OVERSAMPLING_OUTLIERS 3
 #define OVERSAMPLING_TOTAL_SAMPLES (1 << OVERSAMPLING_USABLE_POWER)
@@ -16,7 +16,7 @@ int map(int input, int input_start, int input_end, int output_start, int output_
 void matrix_init_custom(void) {
     for (int row = 0; row < MATRIX_ROWS; row++) {
         for (int col = 0; col < MATRIX_COLS; col++) {
-            pin_t pin = direct_pins[row][col];
+            pin_t           pin      = direct_pins[row][col];
             pin_scan_mode_t pin_mode = pin_scan_modes[row][col];
             if (pin_mode == ANALOG) {
                 palSetLineMode(pin, PAL_MODE_INPUT_ANALOG);
@@ -41,8 +41,8 @@ void insertion_sort(uint16_t v[], int n) {
 }
 
 bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col) {
-    static uint16_t current_extremes[MATRIX_ROWS][MATRIX_COLS] = { 0 };
-    static bool previous_states[MATRIX_ROWS][MATRIX_COLS] = { 0 };
+    static uint16_t current_extremes[MATRIX_ROWS][MATRIX_COLS] = {0};
+    static bool     previous_states[MATRIX_ROWS][MATRIX_COLS]  = {0};
     static uint16_t samples[OVERSAMPLING_TOTAL_SAMPLES];
 
     for (int i = 0; i < OVERSAMPLING_TOTAL_SAMPLES; i++) {
@@ -52,13 +52,13 @@ bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col) {
     insertion_sort(samples, OVERSAMPLING_TOTAL_SAMPLES);
 
     uint32_t total = 0;
+    int      count = 0;
     for (int i = OVERSAMPLING_OUTLIERS; i < OVERSAMPLING_TOTAL_SAMPLES - OVERSAMPLING_OUTLIERS; i++) {
         total += samples[i];
+        count++;
     }
 
-    uint16_t sensor_value = total >> OVERSAMPLING_USABLE_POWER;
-
-
+    uint16_t sensor_value = total / count;
 
     if (col == 0) {
         if (sensor_value > max1) {
@@ -95,7 +95,7 @@ bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col) {
             // if the key is raised above the lowest point by sensitivity_delta, release the key.
             uint16_t release_threshhold = current_extremes[row][col] - sensitivity_delta;
             if (sensor_value < release_threshhold) {
-                current_extremes[row][col] = sensor_value;
+                current_extremes[row][col]       = sensor_value;
                 return previous_states[row][col] = false;
             }
             // if the key is pressed down farther, release_threshhold will be lower in subsequent scans
@@ -110,7 +110,7 @@ bool scan_pin_analog(pin_t pin, uint8_t row, uint8_t col) {
             // however, the key must also be past the main actuation point
             uint16_t actuate_threshhold = current_extremes[row][col] + sensitivity_delta;
             if (sensor_value > actuate_threshhold && sensor_value > actuation_point_adc) {
-                current_extremes[row][col] = sensor_value;
+                current_extremes[row][col]       = sensor_value;
                 return previous_states[row][col] = true;
             }
             // if the key is raised farther, actuate_threshhold will be higher in subsequent scans
@@ -136,7 +136,7 @@ void matrix_read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
 
     matrix_row_t row_shifter = 1;
     for (uint8_t col_index = 0; col_index < MATRIX_COLS; col_index++, row_shifter <<= 1) {
-        pin_t pin = direct_pins[current_row][col_index];
+        pin_t           pin      = direct_pins[current_row][col_index];
         pin_scan_mode_t pin_mode = pin_scan_modes[current_row][col_index];
         if (pin_mode == DIGITAL) {
             current_row_value |= readPin(pin) ? 0 : row_shifter;
@@ -151,7 +151,7 @@ void matrix_read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
 }
 
 bool matrix_scan_custom(matrix_row_t current_matrix[]) {
-    matrix_row_t new_matrix[MATRIX_ROWS] = { 0 };
+    matrix_row_t new_matrix[MATRIX_ROWS] = {0};
     for (int row = 0; row < MATRIX_ROWS; row++) {
         matrix_read_cols_on_row(new_matrix, row);
     }
