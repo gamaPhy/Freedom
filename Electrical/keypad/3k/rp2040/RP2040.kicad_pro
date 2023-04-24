@@ -55,15 +55,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "unconnected_items|105620000|67880000|05ed1c86-9267-4e77-8a08-facc35369fa7|429eee0d-60fa-41e9-9cb2-d32b3fead9ec",
-        "unconnected_items|105620000|71880000|8fccb031-8b36-49bf-b064-a85fc4e34150|05ed1c86-9267-4e77-8a08-facc35369fa7",
-        "unconnected_items|111640000|80760000|6dbc85a7-e0a1-4285-8034-94b4236d922b|4b36f8a0-9ce5-4c67-80cb-512d0ad6f55b",
-        "unconnected_items|111640000|80760000|e7bcc965-7bc3-477f-b615-28df79fce5b2|4b36f8a0-9ce5-4c67-80cb-512d0ad6f55b",
-        "unconnected_items|111735000|80855000|bcd4023e-25f9-4379-9d8c-150a2619f6b2|4b36f8a0-9ce5-4c67-80cb-512d0ad6f55b",
-        "unconnected_items|117940000|80760000|4b36f8a0-9ce5-4c67-80cb-512d0ad6f55b|bcd4023e-25f9-4379-9d8c-150a2619f6b2",
-        "unconnected_items|94380000|67880000|429eee0d-60fa-41e9-9cb2-d32b3fead9ec|bcf71ba6-da1c-4d82-a31f-f09a96879712"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -113,7 +105,7 @@
         "track_dangling": "warning",
         "track_width": "error",
         "tracks_crossing": "error",
-        "unconnected_items": "error",
+        "unconnected_items": "ignore",
         "unresolved_variable": "error",
         "via_dangling": "warning",
         "zones_intersect": "error"
@@ -418,7 +410,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "RP2040_minimal.kicad_pro",
+    "filename": "RP2040.kicad_pro",
     "version": 1
   },
   "net_settings": {

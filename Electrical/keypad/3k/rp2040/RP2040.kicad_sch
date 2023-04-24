@@ -2004,6 +2004,10 @@
     (stroke (width 0) (type default))
     (uuid 0d18ad51-db52-44ed-ab51-c1eb31b33177)
   )
+  (wire (pts (xy 33.02 177.165) (xy 33.02 173.355))
+    (stroke (width 0) (type default))
+    (uuid 0d759d12-c7c1-447c-aef4-a63153074f0d)
+  )
   (wire (pts (xy 86.36 215.265) (xy 90.805 215.265))
     (stroke (width 0) (type default))
     (uuid 0effa8d7-60ee-4b6f-8d1c-d6ae67a4745e)
@@ -2932,6 +2936,10 @@
     (stroke (width 0) (type default))
     (uuid ccd316ff-a7ed-4daa-b619-e5027afbd477)
   )
+  (wire (pts (xy 44.45 177.165) (xy 33.02 177.165))
+    (stroke (width 0) (type default))
+    (uuid ccffd946-8d25-4d60-9880-10b9e306a9de)
+  )
   (wire (pts (xy 188.595 161.29) (xy 184.785 161.29))
     (stroke (width 0) (type default))
     (uuid cd255ee6-2955-4af0-8acb-8a721957cbd7)
@@ -2939,10 +2947,6 @@
   (wire (pts (xy 19.685 135.255) (xy 19.685 146.05))
     (stroke (width 0) (type default))
     (uuid cdc600a4-0c1b-4782-8172-2fca5d26b3cf)
-  )
-  (wire (pts (xy 42.545 172.085) (xy 44.45 172.085))
-    (stroke (width 0) (type default))
-    (uuid cdf57be0-ed6f-4ca2-9174-9ffd2c0f7e93)
   )
   (wire (pts (xy 53.975 117.475) (xy 67.945 117.475))
     (stroke (width 0) (type default))
@@ -8097,17 +8101,17 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "ADC_IN3" (shape input) (at 148.59 158.115 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 175a52c9-8664-4a1e-a558-3ddb2a7b620f)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 158.5826 158.115 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
   (global_label "OSC_OUT" (shape input) (at 53.975 122.555 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 1ae05246-7149-4406-82f4-5646b78355c3)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 53.975 122.555 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+  (global_label "SWDIO" (shape input) (at 44.45 174.625 180)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 45245ad2-8dbd-48c5-a5e9-dff99d48548f)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 44.45 174.625 0)
       (effects (font (size 1.27 1.27)) hide)
     )
   )
@@ -8139,10 +8143,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "SWCLK" (shape input) (at 44.45 174.625 180)
+  (global_label "SWCLK" (shape input) (at 44.45 172.085 180)
     (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 75d884f4-4455-4043-8781-10520c14ba00)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 44.45 174.625 0)
+    (uuid 8186fc7c-545b-4cd4-9283-1f71cac5a7a3)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 44.45 172.085 0)
       (effects (font (size 1.27 1.27)) hide)
     )
   )
@@ -8160,24 +8164,17 @@
       (effects (font (size 1.27 1.27)) hide)
     )
   )
-  (global_label "BUTT2" (shape input) (at 152.4 213.995 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 90af01d8-693f-4097-bd66-ca220c1956d7)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 144.4032 213.995 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "SWDIO" (shape input) (at 44.45 177.165 180)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 971a616d-bce9-4ba6-be1e-719d41203c5d)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 44.45 177.165 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-  )
-  (global_label "BUTT1" (shape input) (at 128.27 228.6 180) (fields_autoplaced)
+  (global_label "BUTT2" (shape input) (at 128.27 228.6 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid a3f7904e-7ac8-4a69-9ffd-44d27a4a7297)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 120.2732 228.6 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+  )
+  (global_label "BUTT1" (shape input) (at 152.4 213.995 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid ab01b8ae-9502-4094-bdf9-1d5b3d9475ac)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 144.4032 213.995 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
@@ -8265,6 +8262,13 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
+  (global_label "ADC_IN3" (shape input) (at 148.59 155.575 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid faa77d3a-b8b1-48f2-86ea-f1aab3f55223)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 158.5826 155.575 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
   (global_label "BUTT0" (shape input) (at 128.905 213.36 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid fb15c547-f314-482f-b9d8-8a304ae748b4)
@@ -8290,7 +8294,7 @@
     )
     (pin "1" (uuid 6d55898f-f8ac-4273-b6b7-f40875d34813))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR014") (unit 1)
         )
@@ -8315,7 +8319,7 @@
     )
     (pin "1" (uuid 119c3d87-e16b-4a10-a39f-922469b20102))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR07") (unit 1)
         )
@@ -8346,7 +8350,7 @@
     (pin "3" (uuid d636b9c9-00a5-4a5c-b0c4-37d79913e1b7))
     (pin "4" (uuid 8825d9e9-a439-4280-80ef-ad718bf98b07))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "Y1") (unit 1)
         )
@@ -8376,7 +8380,7 @@
     )
     (pin "1" (uuid ae240d01-c87e-4efa-a584-31d4ca0e9fed))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR029") (unit 1)
         )
@@ -8401,7 +8405,7 @@
     )
     (pin "1" (uuid 65f835bd-b99c-4eea-8284-2034a750d73c))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR05") (unit 1)
         )
@@ -8427,7 +8431,7 @@
     (pin "1" (uuid 6c03efc5-1115-4058-acbb-eba246aeb203))
     (pin "2" (uuid 26d0ba8d-63b9-4e38-894a-28b4f079e7da))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "R5") (unit 1)
         )
@@ -8455,7 +8459,7 @@
     (pin "3" (uuid 54d81567-ac74-49bb-8c93-2cf8574c7c50))
     (pin "4" (uuid b6dabe64-a7ea-439e-8f37-360e9ff4778d))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D1") (unit 1)
         )
@@ -8480,7 +8484,7 @@
     )
     (pin "1" (uuid 053b7318-6d38-4788-9828-828dd74fe8dd))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR08") (unit 1)
         )
@@ -8506,7 +8510,7 @@
     (pin "1" (uuid c541b295-5e22-4de5-8236-350a14b41e58))
     (pin "2" (uuid 3544b11a-621b-4b3f-8ddc-8b1e2503bd2f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C3") (unit 1)
         )
@@ -8531,7 +8535,7 @@
     )
     (pin "1" (uuid 459d430a-e4b0-42de-b632-699db443cb27))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR038") (unit 1)
         )
@@ -8562,7 +8566,7 @@
     (pin "1" (uuid 22dbae7f-1f95-47bb-a18b-cab84dfeb780))
     (pin "2" (uuid c0932523-6d1e-47e2-9b08-c5347b1344c0))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C22") (unit 1)
         )
@@ -8587,7 +8591,7 @@
     )
     (pin "1" (uuid 2388f2a0-74b7-4ceb-8cc4-301afe4bd96b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR069") (unit 1)
         )
@@ -8617,7 +8621,7 @@
     )
     (pin "1" (uuid fe1ba9dd-94ec-4914-8a33-9d956cc35b33))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR39") (unit 1)
         )
@@ -8642,7 +8646,7 @@
     )
     (pin "1" (uuid b5db5cd4-36d9-47a9-ac93-3079bb00f560))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR081") (unit 1)
         )
@@ -8672,7 +8676,7 @@
     )
     (pin "1" (uuid 98ad7b03-4fc6-4c6a-a3bf-03716a8b5c9b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR04") (unit 1)
         )
@@ -8697,7 +8701,7 @@
     )
     (pin "1" (uuid 635fe706-3ed6-466f-85b8-5242ccffca0e))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR027") (unit 1)
         )
@@ -8722,7 +8726,7 @@
     )
     (pin "1" (uuid 921ec348-65cc-4bf6-a9b9-50111cea5b2c))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR016") (unit 1)
         )
@@ -8747,7 +8751,7 @@
     )
     (pin "1" (uuid 4684d168-5259-4900-aecb-3b1dc2f3729d))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR048") (unit 1)
         )
@@ -8778,7 +8782,7 @@
     (pin "1" (uuid c88de62e-bba6-4673-a9f3-dc65004aff3c))
     (pin "2" (uuid 2a647799-9bb8-4748-b529-5641e55b8b1f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C33") (unit 1)
         )
@@ -8803,7 +8807,7 @@
     )
     (pin "1" (uuid d5c609db-34c9-49a2-a085-5dc7b33edc2a))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR023") (unit 1)
         )
@@ -8829,7 +8833,7 @@
     (pin "1" (uuid febeec04-0a5f-4b1b-86d2-8ee046641e97))
     (pin "2" (uuid 820d5047-58f7-46bf-b4c0-27e3d9ade142))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C32") (unit 1)
         )
@@ -8910,7 +8914,7 @@
     (pin "8" (uuid f2ab95aa-7810-4795-9dc8-efd30edaf8c6))
     (pin "9" (uuid 7683f1c3-8553-4030-bb14-3e108eda1b0c))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U3") (unit 1)
         )
@@ -8935,7 +8939,7 @@
     )
     (pin "1" (uuid fa4086dd-f804-48f2-9b78-043a2a402f57))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR044") (unit 1)
         )
@@ -8960,7 +8964,7 @@
     )
     (pin "1" (uuid b2a980cb-e411-4735-a414-dab24c57e844))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR068") (unit 1)
         )
@@ -8986,7 +8990,7 @@
     (pin "1" (uuid 4cf2b3bf-54fd-4257-aed2-07e26d8613b0))
     (pin "2" (uuid 716beafc-48bd-400d-b767-e6d36cf7a001))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C17") (unit 1)
         )
@@ -9011,7 +9015,7 @@
     )
     (pin "1" (uuid 599b18c6-e90a-4df0-bf5b-0d518f1aec3f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR047") (unit 1)
         )
@@ -9022,7 +9026,7 @@
   (symbol (lib_id "power:GND") (at 293.37 121.92 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 24732286-1655-46d9-b4ad-cc2d5772698f)
-    (property "Reference" "#PWR020" (at 293.37 128.27 0)
+    (property "Reference" "#PWR019" (at 293.37 128.27 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 289.56 123.19 0)
@@ -9036,9 +9040,9 @@
     )
     (pin "1" (uuid e5827c6c-614e-4fd9-97a5-e9b6f2e2f298))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
@@ -9065,7 +9069,7 @@
     (pin "1" (uuid 4a5717a2-d3db-40af-875a-6be5dbc4ef0d))
     (pin "2" (uuid 1fa0b098-b5c2-4bb4-ad78-21f731a11fc4))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "R8") (unit 1)
         )
@@ -9096,7 +9100,7 @@
     (pin "1" (uuid 72579e81-9769-4a76-b89a-82783dc4092c))
     (pin "2" (uuid ae326ee0-d46f-4e25-aac4-f6769a848869))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C25") (unit 1)
         )
@@ -9121,7 +9125,7 @@
     )
     (pin "1" (uuid e4c4df32-d991-4d4d-8f26-333b548cbb43))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR037") (unit 1)
         )
@@ -9146,7 +9150,7 @@
     )
     (pin "1" (uuid 07591878-9739-481e-b12d-5295a466beaf))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR080") (unit 1)
         )
@@ -9177,7 +9181,7 @@
     (pin "1" (uuid cb34effc-7689-4e98-a6e1-f6eddd1fdea8))
     (pin "2" (uuid 86e980b1-6f00-4cf1-8744-2ea3214cfc6a))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C7") (unit 1)
         )
@@ -9202,7 +9206,7 @@
     )
     (pin "1" (uuid e4ad77f1-c5ec-462e-9e66-d4fd66b10db0))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR060") (unit 1)
         )
@@ -9227,7 +9231,7 @@
     )
     (pin "1" (uuid 69ce9e1d-eeb8-4446-aaa8-e4c3143a779d))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR056") (unit 1)
         )
@@ -9258,7 +9262,7 @@
     (pin "1" (uuid d2b391a7-9073-4615-a304-928f8c01653b))
     (pin "2" (uuid e71c60fd-4211-4281-b4cc-37c9a96405b1))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C21") (unit 1)
         )
@@ -9283,7 +9287,7 @@
     )
     (pin "1" (uuid eb2138f0-0a63-4a40-8c5c-d68596320494))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR026") (unit 1)
         )
@@ -9308,7 +9312,7 @@
     )
     (pin "1" (uuid a0581bca-c98c-4506-b0b6-5f6746f62853))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR075") (unit 1)
         )
@@ -9341,7 +9345,7 @@
     (pin "3" (uuid 37403f3a-ff7d-4e3f-9aff-ed82ba076f74))
     (pin "4" (uuid 03e9c475-ac16-4de2-b530-e317ad700fa6))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D9") (unit 1)
         )
@@ -9366,7 +9370,7 @@
     )
     (pin "1" (uuid b475c74b-ddb1-4e22-9558-dededde141c3))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR052") (unit 1)
         )
@@ -9397,7 +9401,7 @@
     (pin "1" (uuid 432228f5-031e-4292-9f1b-ed6109ab4729))
     (pin "2" (uuid 622c8faa-7427-4820-ae9e-2111382b8f2b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C24") (unit 1)
         )
@@ -9426,7 +9430,7 @@
     (pin "4" (uuid c32f3d98-c8de-4d8d-b0e2-ba2f4d65122c))
     (pin "5" (uuid a47971df-fff6-4012-8a60-4f47efdcf9e3))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U6") (unit 1)
         )
@@ -9452,7 +9456,7 @@
     (pin "1" (uuid 13cab342-7d30-401e-bbf1-d717e66e35f4))
     (pin "2" (uuid ba4d5762-7dc8-456b-95c8-7252b58a4029))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "SW1") (unit 1)
         )
@@ -9478,7 +9482,7 @@
     (pin "1" (uuid 98ea2563-27ac-4c5a-ba6e-c89fc395eb55))
     (pin "2" (uuid 57b1ea7f-484f-49cd-bc45-4870da181b6c))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C2") (unit 1)
         )
@@ -9503,7 +9507,7 @@
     )
     (pin "1" (uuid 904d2e98-c103-4bfb-99da-9caa403330da))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR058") (unit 1)
         )
@@ -9549,7 +9553,7 @@
     (pin "B9" (uuid 35ac5fc4-7145-4a7c-881b-946d7d08000c))
     (pin "S1" (uuid 02181323-5764-404e-961d-bdce39e966de))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "P1") (unit 1)
         )
@@ -9574,7 +9578,7 @@
     )
     (pin "1" (uuid 93367b60-61b3-4e86-9d94-95e6fd39d258))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR054") (unit 1)
         )
@@ -9600,7 +9604,7 @@
     (pin "1" (uuid b16c2f30-aa2f-4759-982c-c853069a863b))
     (pin "2" (uuid 01f611f6-2d96-4c64-bc1e-3f95b98df3f1))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C10") (unit 1)
         )
@@ -9629,7 +9633,7 @@
     (pin "4" (uuid 7755160c-a5c7-4973-96f6-3bfa9454cac1))
     (pin "5" (uuid ddcfcaa9-d39e-44fb-9233-1ae0dfe1a96f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U4") (unit 1)
         )
@@ -9654,7 +9658,7 @@
     )
     (pin "1" (uuid 8a306d74-f29d-40ea-b0b5-8edfaaa6b7f9))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR045") (unit 1)
         )
@@ -9680,7 +9684,7 @@
     (pin "1" (uuid ad326449-ff6c-4d83-8f08-5e1ab7a560dc))
     (pin "2" (uuid 8c904cd2-180a-4f30-bd4e-01f40d4ef38f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "SW5") (unit 1)
         )
@@ -9717,7 +9721,7 @@
     (pin "7" (uuid 7b144452-55d8-458e-9d63-6c1f08b65a70))
     (pin "8" (uuid 3a6dec70-daa5-47fa-baab-23466fc763bf))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U5") (unit 1)
         )
@@ -9742,7 +9746,7 @@
     )
     (pin "1" (uuid ce4d1def-4433-4c21-8d7c-4213d6058805))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR042") (unit 1)
         )
@@ -9770,7 +9774,7 @@
     (pin "3" (uuid af149e5f-825b-4050-bb48-67fbbf8225a6))
     (pin "4" (uuid f3b603be-6039-491f-849e-f42d88f0de17))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U1") (unit 1)
         )
@@ -9795,7 +9799,7 @@
     )
     (pin "1" (uuid 4db773f0-7008-4ed1-b325-7174e1eac245))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR025") (unit 1)
         )
@@ -9806,7 +9810,7 @@
   (symbol (lib_id "power:GND") (at 311.15 123.19 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 526e1695-efb5-46fd-96e6-203eaa662962)
-    (property "Reference" "#PWR022" (at 311.15 129.54 0)
+    (property "Reference" "#PWR021" (at 311.15 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 307.34 124.46 0)
@@ -9820,9 +9824,9 @@
     )
     (pin "1" (uuid 7e7b02ac-9c69-485c-86f6-de9e72d1722b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
     )
@@ -9845,7 +9849,7 @@
     )
     (pin "1" (uuid 0c07c220-0000-4905-a8ec-e899ad69fc9b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR065") (unit 1)
         )
@@ -9870,7 +9874,7 @@
     )
     (pin "1" (uuid c48ee5d1-8495-4119-82f8-b43022a9f4c5))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR059") (unit 1)
         )
@@ -9901,7 +9905,7 @@
     (pin "1" (uuid 2646a60a-cda0-4de8-8c38-3d2b80e2dbee))
     (pin "2" (uuid c0d9993c-69dc-4063-a59f-40cee5fc2c3f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C16") (unit 1)
         )
@@ -9926,7 +9930,7 @@
     )
     (pin "1" (uuid 7de34293-e1fe-4a21-a0a7-8b40bae8b9c9))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR074") (unit 1)
         )
@@ -9956,7 +9960,7 @@
     )
     (pin "1" (uuid c132e3b7-4bbd-4036-97ee-1b77176bcdd0))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR030") (unit 1)
         )
@@ -9984,7 +9988,7 @@
     (pin "3" (uuid ff413a5a-74e6-4ac4-98d7-3cd84c447199))
     (pin "4" (uuid f228d6b8-00ca-4d2d-a7bf-73100875ed5a))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D3") (unit 1)
         )
@@ -10012,7 +10016,7 @@
     (pin "3" (uuid 8273b8a3-6378-46ea-9031-48e38074f93e))
     (pin "4" (uuid db47542d-a390-4e47-892b-06a9bfa511c4))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D7") (unit 1)
         )
@@ -10037,7 +10041,7 @@
     )
     (pin "1" (uuid 39efb842-b5de-4b08-b13c-eeeb323dfa58))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR055") (unit 1)
         )
@@ -10062,7 +10066,7 @@
     )
     (pin "1" (uuid f611122d-fac0-4054-90e9-5fc6a969be94))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR043") (unit 1)
         )
@@ -10087,7 +10091,7 @@
     )
     (pin "1" (uuid 7fb895b2-3e2b-4b6a-a38b-2adcead86057))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR03") (unit 1)
         )
@@ -10112,7 +10116,7 @@
     )
     (pin "1" (uuid 452633f8-83d1-44f7-ab10-291887ae16e4))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR01") (unit 1)
         )
@@ -10138,9 +10142,34 @@
     (pin "1" (uuid b827025b-087c-40bb-a1b9-7e3093fe4068))
     (pin "2" (uuid a355f391-9202-45d7-afcc-80b94aba095b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C30") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3V3") (at 33.02 173.355 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 70d21b1c-3f61-4d04-b855-939e5401912e)
+    (property "Reference" "#PWR036" (at 33.02 177.165 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3V3" (at 33.02 169.545 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 33.02 173.355 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 33.02 173.355 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 75466cd2-ce1d-4658-800c-7703d8438a6e))
+    (instances
+      (project "RP2040"
+        (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
+          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -10163,7 +10192,7 @@
     )
     (pin "1" (uuid c6153092-476b-41fd-be55-8eeba7d9ac6c))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR17") (unit 1)
         )
@@ -10191,7 +10220,7 @@
     (pin "3" (uuid aaad04a4-7eb9-4061-a3d8-b55710d9a1d3))
     (pin "4" (uuid 40afbb1e-115d-4cbd-8b51-9227d10d64fd))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D8") (unit 1)
         )
@@ -10216,7 +10245,7 @@
     )
     (pin "1" (uuid caa79c76-3d8a-4b5d-b85d-6575d3f72c98))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR053") (unit 1)
         )
@@ -10242,7 +10271,7 @@
     (pin "1" (uuid b12922ca-d0e0-4c4a-8818-f30f01b30afe))
     (pin "2" (uuid 710b5d1c-cdc9-4534-a738-1162d6257774))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C26") (unit 1)
         )
@@ -10253,7 +10282,7 @@
   (symbol (lib_id "Device:R") (at 186.055 125.095 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 73cbeece-9b3f-41c5-bc03-0c5f0ae14af6)
-    (property "Reference" "R7" (at 186.055 120.65 90)
+    (property "Reference" "R6" (at 186.055 120.65 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k" (at 186.055 123.19 90)
@@ -10268,9 +10297,9 @@
     (pin "1" (uuid 5d82d19f-62c1-4f1d-ab24-5022a252a199))
     (pin "2" (uuid 387e7323-1812-47a3-a7f4-ea0beb144216))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "R7") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
     )
@@ -10293,7 +10322,7 @@
     )
     (pin "1" (uuid 7af21c92-d82e-4a8b-b567-778d536ea372))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR028") (unit 1)
         )
@@ -10318,7 +10347,7 @@
     )
     (pin "1" (uuid 0096b8c5-b810-40e0-8694-b91f4bc941d6))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR077") (unit 1)
         )
@@ -10349,7 +10378,7 @@
     (pin "1" (uuid 6ed41c2f-e8ff-40ad-88c6-d27d7772c4de))
     (pin "2" (uuid 9298b85a-05d3-4bda-9073-02b23ca76260))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C13") (unit 1)
         )
@@ -10378,7 +10407,7 @@
     (pin "1" (uuid 0e338488-e9ce-46cd-905a-54d16c05ab61))
     (pin "2" (uuid f2f2eb47-20fe-4652-90b3-6c46bcc628d2))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "R9") (unit 1)
         )
@@ -10408,7 +10437,7 @@
     )
     (pin "1" (uuid 7f2096ca-c916-459b-998c-ccc74de3420f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR057") (unit 1)
         )
@@ -10438,7 +10467,7 @@
     )
     (pin "1" (uuid 549dfa63-bad2-4e0c-9cd7-da49132fa499))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR033") (unit 1)
         )
@@ -10463,7 +10492,7 @@
     )
     (pin "1" (uuid 67d38750-8505-42f1-9dde-6c5a7313a667))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR073") (unit 1)
         )
@@ -10494,7 +10523,7 @@
     (pin "1" (uuid 717f1ee8-cf14-4b22-a4e3-9ea283f4125b))
     (pin "2" (uuid ae308aac-8385-444d-87f5-6b2183fd7a71))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C14") (unit 1)
         )
@@ -10522,7 +10551,7 @@
     (pin "3" (uuid ec2463d8-69f0-4c97-bd0c-c5e11fb15f17))
     (pin "4" (uuid 8c8cddd3-61a0-4643-be9f-a045f7d6b900))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D4") (unit 1)
         )
@@ -10547,7 +10576,7 @@
     )
     (pin "1" (uuid 902a728d-ac0b-4b2c-8bb7-87176ab63063))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR072") (unit 1)
         )
@@ -10577,7 +10606,7 @@
     )
     (pin "1" (uuid 99914766-dec9-40a0-8d41-3d6f7070d2fd))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR013") (unit 1)
         )
@@ -10605,34 +10634,9 @@
     (pin "3" (uuid 62b653e7-5951-442c-8681-300659be35d5))
     (pin "4" (uuid be1af3f1-863b-4134-a5fc-5b611da0347c))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "J1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:+3V3") (at 42.545 172.085 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 878904ef-18fc-4852-ad6a-46e972c2caea)
-    (property "Reference" "#PWR036" (at 42.545 175.895 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+3V3" (at 42.545 168.275 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 42.545 172.085 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 42.545 172.085 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid c18f0d82-1acf-4c09-8a02-0f8ef47435c8))
-    (instances
-      (project "RP2040_minimal"
-        (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -10656,7 +10660,7 @@
     (pin "1" (uuid 4f891c3f-7911-4a27-9b14-5c639de67db5))
     (pin "2" (uuid d9acbd3c-0bca-445b-bb24-d19ac94471ed))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C19") (unit 1)
         )
@@ -10684,7 +10688,7 @@
     (pin "3" (uuid 8cc600a4-d52c-4534-a0a7-f6e35823b617))
     (pin "4" (uuid ecc2a52f-60f3-4be1-9895-3d199316eed9))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D10") (unit 1)
         )
@@ -10710,7 +10714,7 @@
     (pin "1" (uuid ae657ff0-eaab-4631-9890-cd9b09c702fb))
     (pin "2" (uuid 12f82637-42d1-42a4-b5ce-3dce275433cf))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C18") (unit 1)
         )
@@ -10721,7 +10725,7 @@
   (symbol (lib_id "power:GND") (at 275.59 123.19 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 91a436eb-05de-454c-954d-4a3a74f5cc56)
-    (property "Reference" "#PWR021" (at 275.59 129.54 0)
+    (property "Reference" "#PWR020" (at 275.59 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 272.415 123.825 0)
@@ -10735,9 +10739,9 @@
     )
     (pin "1" (uuid 0d4f1c35-cf50-482e-926b-90591fbc3a01))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -10760,7 +10764,7 @@
     )
     (pin "1" (uuid 3e5b9c2e-0cec-4cf2-ba17-db494247bb37))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR035") (unit 1)
         )
@@ -10785,7 +10789,7 @@
     )
     (pin "1" (uuid 919cdf72-6db8-4e66-a0e1-d22bcff26402))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR067") (unit 1)
         )
@@ -10810,7 +10814,7 @@
     )
     (pin "1" (uuid 25eda353-94d1-448a-8b52-197f81e8494f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR070") (unit 1)
         )
@@ -10840,7 +10844,7 @@
     )
     (pin "1" (uuid b0453db8-3ccc-4339-85c3-34708182b26f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR078") (unit 1)
         )
@@ -10871,7 +10875,7 @@
     (pin "1" (uuid d7cafbef-cd39-4391-bab3-441a741b0458))
     (pin "2" (uuid 08e168d9-7985-4191-915f-07229b78216b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C8") (unit 1)
         )
@@ -10899,7 +10903,7 @@
     (pin "3" (uuid 2dbda701-f7c5-4fd1-a340-be880b284518))
     (pin "4" (uuid 4aab6c5b-a944-454f-a01f-ec7426821a52))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D2") (unit 1)
         )
@@ -10927,7 +10931,7 @@
     (pin "3" (uuid daca9e01-8761-4b25-b39c-70cadf2e488c))
     (pin "4" (uuid 29150176-e70f-436d-92c6-4334f1b4bb68))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D6") (unit 1)
         )
@@ -10952,7 +10956,7 @@
     )
     (pin "1" (uuid 28e53ead-42c4-4957-ad2b-bf277e8e2797))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR071") (unit 1)
         )
@@ -10982,7 +10986,7 @@
     )
     (pin "1" (uuid 24812cbd-f778-4abd-aef7-d027a2dda946))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR018") (unit 1)
         )
@@ -11008,7 +11012,7 @@
     (pin "1" (uuid e4d06020-a264-437e-8c54-16bc95446d09))
     (pin "2" (uuid 9ba7d989-b3bc-4f53-89d9-da61a93bd9d6))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C4") (unit 1)
         )
@@ -11034,7 +11038,7 @@
     (pin "1" (uuid 425344a2-08f6-4ead-a975-4328713e24c1))
     (pin "2" (uuid 7e638599-227c-45d4-9f0c-51329cbe3a9a))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C5") (unit 1)
         )
@@ -11061,7 +11065,7 @@
     (pin "2" (uuid 0ce9bb39-eee8-4992-9458-f30ad716c669))
     (pin "3" (uuid 8dca4629-2440-4c70-8df1-2bbfb8c5b70e))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U9") (unit 1)
         )
@@ -11089,7 +11093,7 @@
     (pin "3" (uuid d597e848-2328-4336-b434-4668d6724279))
     (pin "4" (uuid d3a09ee7-cb34-4ef2-9532-7c3e76b603c6))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "D5") (unit 1)
         )
@@ -11114,7 +11118,7 @@
     )
     (pin "1" (uuid 67f59718-74a9-45c3-a8c0-0e2e44c8ea35))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR010") (unit 1)
         )
@@ -11139,7 +11143,7 @@
     )
     (pin "1" (uuid 1301333f-0d6e-4146-8a03-af14581b7cd4))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR034") (unit 1)
         )
@@ -11165,7 +11169,7 @@
     (pin "1" (uuid 59c06e87-2632-4041-8856-c42a2296fc52))
     (pin "2" (uuid 3f9f08e5-f6c3-4410-a1a0-3a920e46f6b7))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C34") (unit 1)
         )
@@ -11190,7 +11194,7 @@
     )
     (pin "1" (uuid 26209386-80e3-4120-8dfb-2063e9ecb0fb))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR046") (unit 1)
         )
@@ -11217,7 +11221,7 @@
     (pin "2" (uuid 6846f286-c2c5-406a-ae93-254da35597da))
     (pin "3" (uuid f58d8d98-4222-4958-9dba-f7f5360acd76))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U2") (unit 1)
         )
@@ -11243,7 +11247,7 @@
     (pin "1" (uuid 5015d432-963d-4c80-8404-e4aa0c95274c))
     (pin "2" (uuid 3dbff45c-4648-4099-b584-6f6f1f86e18d))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "R2") (unit 1)
         )
@@ -11268,7 +11272,7 @@
     )
     (pin "1" (uuid 64f34ab4-b0eb-4c92-85d8-e3f02836f302))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR012") (unit 1)
         )
@@ -11293,7 +11297,7 @@
     )
     (pin "1" (uuid 56a2f46c-1918-450f-b00d-be92405d88df))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR015") (unit 1)
         )
@@ -11319,7 +11323,7 @@
     (pin "1" (uuid e2931da1-96fb-4748-86d4-809cf50d2afc))
     (pin "2" (uuid 7bc7900e-b10e-4708-8027-dd91a4299b35))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C9") (unit 1)
         )
@@ -11344,7 +11348,7 @@
     )
     (pin "1" (uuid 95eaaacf-c1d0-4b15-9469-3af333f8378b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR09") (unit 1)
         )
@@ -11370,7 +11374,7 @@
     (pin "1" (uuid e9201ba3-64d9-4031-87fc-f109142f5693))
     (pin "2" (uuid 99b2c1eb-1106-4087-89a5-607e46091376))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C1") (unit 1)
         )
@@ -11396,7 +11400,7 @@
     (pin "1" (uuid 48b4ba96-050c-4a79-bd2a-edb6c6c4cccd))
     (pin "2" (uuid beb28934-770e-431b-b27a-acedd9edce61))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C15") (unit 1)
         )
@@ -11422,7 +11426,7 @@
     (pin "1" (uuid 2f23b341-2bb3-4eff-9d60-6ac8c9ab0f57))
     (pin "2" (uuid 2b253332-029c-4fcc-9358-91739c19044f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "SW4") (unit 1)
         )
@@ -11452,7 +11456,7 @@
     )
     (pin "1" (uuid ce4e9839-47c9-4971-a652-b4abddae275e))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR031") (unit 1)
         )
@@ -11477,7 +11481,7 @@
     )
     (pin "1" (uuid 1d740ad3-aecd-446e-bea1-9d6c26148a7b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR062") (unit 1)
         )
@@ -11502,7 +11506,7 @@
     )
     (pin "1" (uuid 77340739-545f-4997-92a4-773f57890c25))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR02") (unit 1)
         )
@@ -11529,7 +11533,7 @@
     (pin "2" (uuid 4422f7f0-30e9-4145-b4c8-59e262a8a4ad))
     (pin "3" (uuid fd68f670-23e3-42ce-8d2d-804333eb487f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U8") (unit 1)
         )
@@ -11554,7 +11558,7 @@
     )
     (pin "1" (uuid 6779b5a4-733d-4639-934b-8092ca3c66b3))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR011") (unit 1)
         )
@@ -11579,7 +11583,7 @@
     )
     (pin "1" (uuid 9684fa57-edcf-4d01-87aa-931c5b15023b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR079") (unit 1)
         )
@@ -11610,7 +11614,7 @@
     (pin "1" (uuid 34a2df00-84e5-4eb4-b0e6-a9935dccded6))
     (pin "2" (uuid 9cb8fc84-cad0-4504-81eb-3c697753bbd6))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "R3") (unit 1)
         )
@@ -11635,7 +11639,7 @@
     )
     (pin "1" (uuid c6783d09-7005-4e23-ab07-aea6cf67b8f2))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR051") (unit 1)
         )
@@ -11666,7 +11670,7 @@
     (pin "1" (uuid 6748ef06-a938-4a17-8371-a088c07461b2))
     (pin "2" (uuid f53b2e79-de2b-4691-87e4-765bd6bfaf36))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "R1") (unit 1)
         )
@@ -11692,7 +11696,7 @@
     (pin "1" (uuid 4ab88e1b-a314-4258-8c27-1ab7bc07909d))
     (pin "2" (uuid 9b860550-d101-4c64-8e31-101b716fb265))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C20") (unit 1)
         )
@@ -11718,7 +11722,7 @@
     (pin "1" (uuid d0cd2cfc-4474-4c10-b8d1-835198c1eb7c))
     (pin "2" (uuid ee85a84d-1d3a-4eae-aed1-1e73c2d3a59d))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C6") (unit 1)
         )
@@ -11744,7 +11748,7 @@
     (pin "1" (uuid 6d9b6186-b171-4454-bf85-73d60fe2e0d4))
     (pin "2" (uuid 0135b58f-c877-4af2-b4d6-e8984cae8674))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C27") (unit 1)
         )
@@ -11769,7 +11773,7 @@
     )
     (pin "1" (uuid 88dec408-6347-4237-9fcb-42af78ff049d))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR076") (unit 1)
         )
@@ -11800,7 +11804,7 @@
     (pin "1" (uuid fe1dfd06-6c3d-4bf2-9150-4fdf6c43cd15))
     (pin "2" (uuid f398475e-3781-48e0-b3c7-e60cb7a42d30))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "SW3") (unit 1)
         )
@@ -11830,7 +11834,7 @@
     )
     (pin "1" (uuid 87e11de8-7dd6-48a0-8b5a-addf1a9a42a2))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR082") (unit 1)
         )
@@ -11860,7 +11864,7 @@
     )
     (pin "1" (uuid 96baf535-08c0-422f-8897-9bd2887aa97c))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR063") (unit 1)
         )
@@ -11885,7 +11889,7 @@
     )
     (pin "1" (uuid 6941fa0b-5f76-414e-9877-d962ed88397d))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR032") (unit 1)
         )
@@ -11896,7 +11900,7 @@
   (symbol (lib_id "power:+3V3") (at 38.735 125.095 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e0597dea-f4ef-48a3-aa82-508abbcf4226)
-    (property "Reference" "#PWR019" (at 38.735 128.905 0)
+    (property "Reference" "#PWR022" (at 38.735 128.905 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 38.735 121.285 0)
@@ -11910,9 +11914,9 @@
     )
     (pin "1" (uuid 429cc375-a66c-4c49-91d5-8a2c26da1e52))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -11937,7 +11941,7 @@
     (pin "2" (uuid 460d505c-d51c-4756-b9da-b8844f0b6182))
     (pin "3" (uuid 5a0ff42e-47ea-4df5-b178-a264d7d649f5))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "Q1") (unit 1)
         )
@@ -11963,7 +11967,7 @@
     (pin "1" (uuid ab7208e8-0581-4304-9cf8-b82a69040f2c))
     (pin "2" (uuid 1e549e07-e3b9-4f9a-bba7-8d724874d4ea))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "SW2") (unit 1)
         )
@@ -11988,7 +11992,7 @@
     )
     (pin "1" (uuid f17f603f-7564-402a-ae05-9e8d6710e443))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR40") (unit 1)
         )
@@ -12013,7 +12017,7 @@
     )
     (pin "1" (uuid 9a23f0e0-b4f7-434c-9cad-81cfd39c2743))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR41") (unit 1)
         )
@@ -12038,7 +12042,7 @@
     )
     (pin "1" (uuid b1a9b594-20fc-448e-b622-02f4e1d8463a))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR061") (unit 1)
         )
@@ -12063,7 +12067,7 @@
     )
     (pin "1" (uuid a133da3e-a44f-44b4-9294-e0f4577173ed))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR066") (unit 1)
         )
@@ -12089,7 +12093,7 @@
     (pin "1" (uuid d960c82a-c918-47d0-a6b7-f6c69fdf7a0b))
     (pin "2" (uuid 873beef8-e5d1-48e2-b2dd-99968285143e))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "R4") (unit 1)
         )
@@ -12115,7 +12119,7 @@
     (pin "1" (uuid 96d29627-f527-440a-b3a7-7b3ca0fe27cf))
     (pin "2" (uuid e7687604-50eb-46d0-ad8b-a658949dde37))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C31") (unit 1)
         )
@@ -12140,7 +12144,7 @@
     )
     (pin "1" (uuid 7d30bbde-6254-407f-8d9e-1d7f2bef3805))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR06") (unit 1)
         )
@@ -12166,7 +12170,7 @@
     (pin "1" (uuid 1a899da8-7b1b-4da6-a357-eb0f4e260607))
     (pin "2" (uuid 747b0cf1-2107-45ef-80bd-64ec93b5af09))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C23") (unit 1)
         )
@@ -12191,7 +12195,7 @@
     )
     (pin "1" (uuid d51364a1-911d-4332-976f-b2f514a207ed))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR024") (unit 1)
         )
@@ -12217,7 +12221,7 @@
     (pin "1" (uuid 8be3da19-6b37-49a8-b21a-c9445869db32))
     (pin "2" (uuid a047d06d-463b-4e20-8b1d-457ae9635499))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C11") (unit 1)
         )
@@ -12243,7 +12247,7 @@
     (pin "1" (uuid d1e93c54-512a-44e7-b769-2951eddaf464))
     (pin "2" (uuid 69d2a9c1-aa61-46aa-93e0-8ac1e8216362))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "F1") (unit 1)
         )
@@ -12268,7 +12272,7 @@
     )
     (pin "1" (uuid 3d4a371f-262e-4e92-bf77-387c9205fadf))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR049") (unit 1)
         )
@@ -12298,7 +12302,7 @@
     )
     (pin "1" (uuid 01e6fa91-175c-4494-bca3-ec9af64925a7))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR064") (unit 1)
         )
@@ -12327,7 +12331,7 @@
     (pin "1" (uuid b73c3d4e-b5ed-4eb2-a112-a81e8887e163))
     (pin "2" (uuid 468770b8-e4c1-4ec2-b39a-d53188a936b5))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "R10") (unit 1)
         )
@@ -12357,7 +12361,7 @@
     )
     (pin "1" (uuid 7fcc977d-de6d-4b07-8988-2efb5ef9625b))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "#PWR050") (unit 1)
         )
@@ -12388,7 +12392,7 @@
     (pin "1" (uuid a466898c-4895-4f8f-806d-bff4982b7ba8))
     (pin "2" (uuid c12f5c58-991c-4a9e-a128-86f165e2798f))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C29") (unit 1)
         )
@@ -12415,7 +12419,7 @@
     (pin "2" (uuid c3edbad5-6874-4cf0-9f20-8324b24f9f93))
     (pin "3" (uuid e539858e-b0a5-4a8b-aa69-d6b15b7f40b8))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "U7") (unit 1)
         )
@@ -12426,7 +12430,7 @@
   (symbol (lib_id "Device:R") (at 38.735 129.54 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fc6ab60f-8dcd-457d-a133-08e96abec4bd)
-    (property "Reference" "R6" (at 40.64 128.905 0)
+    (property "Reference" "R7" (at 40.64 128.905 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "1k" (at 40.64 131.445 0)
@@ -12441,9 +12445,9 @@
     (pin "1" (uuid 38efec6d-8e57-4d01-b317-3a4fc1acffc4))
     (pin "2" (uuid 251b52c8-c370-4a01-8fad-2066a9da19b4))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
-          (reference "R6") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
     )
@@ -12467,7 +12471,7 @@
     (pin "1" (uuid 1628e18c-95a0-4039-aecc-b6f41eadeac9))
     (pin "2" (uuid 4f368101-f001-43a9-b691-37e383d80e45))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C28") (unit 1)
         )
@@ -12493,7 +12497,7 @@
     (pin "1" (uuid 52ab0c81-a006-4068-9827-5825ce39e3c6))
     (pin "2" (uuid 0aa97cd3-13f8-4e54-915e-d94d48fd7924))
     (instances
-      (project "RP2040_minimal"
+      (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
           (reference "C12") (unit 1)
         )
