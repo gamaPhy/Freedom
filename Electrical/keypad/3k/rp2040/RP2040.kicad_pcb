@@ -4683,6 +4683,8 @@
     )
   )
 
+  (gr_circle (center 100 100) (end 81.11 75.42)
+    (stroke (width 0.1) (type default)) (fill none) (layer "Cmts.User") (tstamp af4883c3-a887-4011-accb-dd3172095ced))
   (gr_arc (start 104.625 66.450001) (mid 100 133.867286) (end 95.375 66.450001)
     (stroke (width 0.05) (type default)) (layer "Edge.Cuts") (tstamp 538f2d3c-2987-4fda-8ef8-5446ce7b9fb6))
 
@@ -5486,7 +5488,6 @@
   (segment (start 96.767254 89.67) (end 96.505 89.407746) (width 0.2) (layer "F.Cu") (net 28) (tstamp ba24fd45-d722-4838-8fcf-6c0ba0b16795))
   (segment (start 95.244055 86.778) (end 93.754838 86.778) (width 0.2) (layer "F.Cu") (net 28) (tstamp c43fb97b-cc04-4b23-b1a4-b5f34617b6a6))
   (segment (start 85.568169 87.578) (end 86.879838 87.578) (width 0.2) (layer "F.Cu") (net 28) (tstamp ca9e8785-570e-46f4-a633-38845c87e232))
-  (segment (start 92.52 88.08) (end 92.52 87.580662) (width 0.15) (layer "F.Cu") (net 28) (tstamp cec064a0-544c-4c82-ba12-ef252421c691))
   (segment (start 95.407853 86.941798) (end 95.407853 86.739889) (width 0.2) (layer "F.Cu") (net 28) (tstamp fb2a5395-2276-4d64-8396-6e7c6e104557))
   (via (at 85.178085 87.968084) (size 0.6) (drill 0.35) (layers "F.Cu" "B.Cu") (net 28) (tstamp 77c34fba-f16c-43ff-99ff-5e813883cd99))
   (via (at 92.52 88.08) (size 0.6) (drill 0.35) (layers "F.Cu" "B.Cu") (net 28) (tstamp d55a15e3-83bd-44e7-931f-f664d101117e))
@@ -31400,7 +31401,6 @@
       ca9e8785-570e-46f4-a633-38845c87e232
       cd923441-ef5c-4554-a881-e1b034a79bb7
       ce4d6fe4-4a79-4d65-81b3-f9ec29402b56
-      cec064a0-544c-4c82-ba12-ef252421c691
       cf81ff9f-2ba8-47b6-955c-a6bf4d590899
       cf855535-bcec-42de-aff3-55675cefb444
       d0cec9cb-4ae0-43d3-85d9-bb215d8d8521
