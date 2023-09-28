@@ -8699,7 +8699,7 @@
     (property "Datasheet" "" (at 310.515 138.43 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 635fe706-3ed6-466f-85b8-5242ccffca0e))
+    (pin "1" (uuid da5bfcee-49e9-42ef-8c06-ae4513fd34f9))
     (instances
       (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
@@ -9424,11 +9424,11 @@
     (property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP2127.pdf" (at 290.83 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 0a43f059-7fce-4d26-bbf8-1835d55fcb2f))
-    (pin "2" (uuid 132ba8f1-c518-4b79-a119-900446a2575f))
-    (pin "3" (uuid 1000708d-ac6c-4beb-868c-94f44c46c52b))
-    (pin "4" (uuid c32f3d98-c8de-4d8d-b0e2-ba2f4d65122c))
-    (pin "5" (uuid a47971df-fff6-4012-8a60-4f47efdcf9e3))
+    (pin "1" (uuid 56aec138-9598-4c2d-9ca4-dbc55bd7b89f))
+    (pin "2" (uuid cd3f44ea-24e7-4e59-afa1-ab6dcd527441))
+    (pin "3" (uuid 047f0b88-36ec-4de9-bd0c-fa5473f8fb9e))
+    (pin "4" (uuid f79cfe2e-9cd2-4a87-8f4b-72a4d359a050))
+    (pin "5" (uuid 11c07081-38a8-4aa4-887b-7c50d806d195))
     (instances
       (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
@@ -10320,7 +10320,7 @@
     (property "Datasheet" "" (at 275.59 139.065 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 7af21c92-d82e-4a8b-b567-778d536ea372))
+    (pin "1" (uuid bc5a1deb-cfad-4d02-b27f-8bd42fbb69d9))
     (instances
       (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
@@ -10465,7 +10465,7 @@
     (property "Datasheet" "" (at 290.83 155.575 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 549dfa63-bad2-4e0c-9cd7-da49132fa499))
+    (pin "1" (uuid 28fce2aa-5755-41d5-a953-4108e458ef55))
     (instances
       (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
@@ -10657,8 +10657,8 @@
     (property "Datasheet" "~" (at 303.53 146.685 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 4f891c3f-7911-4a27-9b14-5c639de67db5))
-    (pin "2" (uuid d9acbd3c-0bca-445b-bb24-d19ac94471ed))
+    (pin "1" (uuid 419aad55-14a3-4048-b2a5-2a299aca4aec))
+    (pin "2" (uuid 81797697-0afd-4580-9022-2ed38a44f40b))
     (instances
       (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
@@ -10711,8 +10711,8 @@
     (property "Datasheet" "~" (at 275.59 146.685 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid ae657ff0-eaab-4631-9890-cd9b09c702fb))
-    (pin "2" (uuid 12f82637-42d1-42a4-b5ce-3dce275433cf))
+    (pin "1" (uuid 04f56165-5968-46d9-b661-e493e5e7c6f0))
+    (pin "2" (uuid e6f2cfec-f3be-4fd4-b5c3-1fa0a868c66b))
     (instances
       (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
@@ -11454,7 +11454,7 @@
     (property "Datasheet" "" (at 275.59 153.035 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid ce4e9839-47c9-4971-a652-b4abddae275e))
+    (pin "1" (uuid 0905c3a7-7df6-4083-93d3-94d38fcb8cb7))
     (instances
       (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
@@ -11887,7 +11887,7 @@
     (property "Datasheet" "" (at 303.53 153.035 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6941fa0b-5f76-414e-9877-d962ed88397d))
+    (pin "1" (uuid 9fba7480-9054-4370-8db8-edabcb527dc6))
     (instances
       (project "RP2040"
         (path "/26e500cb-9f3f-4e62-bb26-21a6be4a5bcc"
