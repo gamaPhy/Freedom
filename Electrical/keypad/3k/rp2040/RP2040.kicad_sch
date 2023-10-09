@@ -7823,7 +7823,7 @@
     (effects (font (size 2.54 2.54)) (justify left bottom))
     (uuid 61eaa5f4-e899-4f5c-9438-7ddb5e7109ff)
   )
-  (text "Ensure 100n is close to \npin 43 (ADC_AVDD)" (at 193.04 74.295 0)
+  (text "Ensure caps are close to\npin 43 (ADC_AVDD)" (at 193.04 74.295 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 666c901e-2a27-4412-86c5-e2e0e43efffe)
   )
