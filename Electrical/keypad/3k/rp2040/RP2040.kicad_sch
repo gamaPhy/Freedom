@@ -8840,7 +8840,7 @@
     (property "Value" "10k" (at 54.483 51.308 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 50.927 50.165 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 50.927 50.165 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 52.705 50.165 0)
