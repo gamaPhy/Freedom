@@ -8,6 +8,8 @@ KFC (Kicad, Freecad, C)
 
 <https://github.com/gamaPhy/qmk-keyboards/tree/main/firmware/freedom>
 
+## Images
+
 ![freedom-3k](https://github.com/user-attachments/assets/1af95d7a-c4f3-4e92-a06f-d3448b5f194e)
 
 ## How To
