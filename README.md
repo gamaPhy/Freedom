@@ -1,7 +1,5 @@
 # Freedom series Analog Keypads
 
-![freedom-3k](https://github.com/user-attachments/assets/1af95d7a-c4f3-4e92-a06f-d3448b5f194e)
-
 ## Tech Stack
 
 KFC (Kicad, Freecad, C)
@@ -9,6 +7,8 @@ KFC (Kicad, Freecad, C)
 ## Firmware
 
 <https://github.com/gamaPhy/qmk-keyboards/tree/main/firmware/freedom>
+
+![freedom-3k](https://github.com/user-attachments/assets/1af95d7a-c4f3-4e92-a06f-d3448b5f194e)
 
 ## How To
 
